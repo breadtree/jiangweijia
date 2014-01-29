@@ -1,0 +1,148 @@
+body{
+	margin:0 auto;
+	background:#ffffff;
+	font-family:"Lucida Grande",Arial,Verdana;
+}
+
+
+
+.mainpanel{
+	background:url("../images/diyrec_bg.jpg") no-repeat;
+	width:434px;
+	height:340px;
+}
+
+
+#diy_player{
+	float:left;
+	margin:0;
+	width:426px;
+	height:255px;
+	padding-top:10px;
+}
+
+h3{
+	font-size:18px;
+	text-shadow: 0 1px 0 #fff;
+}
+.msg_txt_prev{
+	font-weight:bold;
+	font-size:16px;
+	color:#474747;
+	padding:0px 5px 5px 5px;
+	text-align:center;
+	height:120px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+
+#button_container_prev{
+	margin-left:5px;
+	padding-top:8px;
+
+}
+
+.button{
+	width:52px;
+	height:55px;
+	cursor:pointer;
+	border: none;
+}
+
+.play_prev{
+	background:url("../images/buttons/ie6/play_prev.png") no-repeat;
+}
+
+.stop_prev{
+	background:url("../images/buttons/ie6/stop_prev.png") no-repeat;
+}
+
+.rec_prev{
+	background:url("../images/buttons/ie6/record_prev.png") no-repeat;
+}
+
+.speaker{
+	background:url("../images/buttons/speaker.png") 95% 35% no-repeat;
+}
+
+.retry_btn{
+	background:url("../images/buttons/ie6/retry.png") no-repeat;
+	width:109px !important; 
+	height:55px !important;
+}
+
+.upload_btn{
+	background:url("../images/buttons/ie6/upload.png") no-repeat;
+	width:109px !important; 
+	height:55px !important;
+}
+
+
+#volSlider{
+	background: #f2f2f2;
+	border:1px solid gray;
+	cursor: hand;
+	width: 87%;
+	margin-top: 1px;
+	/*float: left;*/
+	cursor: pointer;
+}
+
+#volSlider{
+	margin-top:20px;	
+}
+
+
+#recSongSlider {
+	background: #f2f2f2;
+	border:1px solid gray;
+	cursor: hand;
+	width: 67%;
+	/*margin-top: -2px;*/
+	margin-left:10px;
+	float: left;
+	cursor: pointer;
+}
+
+#songTime{
+	float:left;
+	font-weight:bold;
+	color:#148caa;
+	font-family:"Calibri",arial;
+	font-size:12px;
+	padding-left:8px;
+	margin-top:-3px;
+}
+
+.disabled{
+	cursor:default;
+	opacity:0.5;
+	filter:alpha(opacity=50)
+}	 
+
+.ui-slider-horizontal .ui-slider-handle{ background: url(../images/buttons/knob.png);background-repeat:none; width: 19px; height: 19px;  top:-.5em !important; margin-left: -.6em;}
+
+#userInputMask{
+	position:absolute;
+	width:100%;
+	height:600px;
+	z-index:1001;
+	background:#dddddd;
+	top: 0px;
+	left: 0px;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+#userInput{
+	display:none;
+	background:#fefefe;
+	position: absolute;
+	top: 20%;
+	left:20%;
+	z-index: 1002;
+	text-align: left;
+	padding:10px;
+	border:2px solid #CCC;
+	width:350px;
+}

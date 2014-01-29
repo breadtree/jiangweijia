@@ -1,0 +1,307 @@
+<html>
+<head>
+
+<title>Operator Management</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<script language="javascript">
+   var addWin;          // 增加操作员标志
+   var delWin;          // 删除操作员标志
+   var infoWin;         // 更改操作员属性标志
+   var unLockWin;       // 解禁作员属性标志
+
+   function unLockOper () {
+      var operType = '';
+      if(document.view.pageflag.value=='member'){
+        operType = 'unlock';
+      }
+      if (delWin != null && (! delWin.closed)) {
+         alert("The Delete Operator window has been opened. Please close the window first!");//删除操作员窗口已经打开，请先关闭该窗口
+         delWin.focus();
+         return;
+      }
+      if (infoWin != null && (! infoWin.closed)) {
+         alert("The Modify Operator Properties window has been opened. Please close the window first!");//修改操作员属性窗口已经打开，请先关闭该窗口
+         infoWin.focus();
+         return;
+      }
+       if (addWin != null && (! addWin.closed)) {
+         alert("The Add Operator window has been opened. Please close the window first!");//增加操作员窗口已经打开，请先关闭该窗口
+         addWin.focus();
+         return;
+      }
+      if (unLockWin != null && (! unLockWin.closed))
+         if (window.confirm("The Add Operator window has been opened. Close?"))//增加操作员窗口已经打开，是否关闭
+            unLockWin.close();
+         else
+            unLockWin.focus();
+      else
+         unLockWin = window.open('operUnlock.jsp?operID=' + document.view.operID.value+'&operType='+operType,'del','width=300, height=80');
+   }
+
+
+
+   // 增加操作员
+   function addOper() {
+      var operType = '';
+      if(document.view.pageflag.value=='member'){
+        operType = 'add';
+      }
+
+       if (unLockWin != null && (! unLockWin.closed)) {
+         alert("The Unlock Operator window has been opened. Please close the window first!");//操作员解禁窗口已经打开，请先关闭该窗口
+         unLockWin.focus();
+         return;
+      }
+      if (delWin != null && (! delWin.closed)) {
+         alert("The Delete Operator window has been opened. Please close the window first!");//删除操作员窗口已经打开，请先关闭该窗口
+         delWin.focus();
+         return;
+      }
+      if (infoWin != null && (! infoWin.closed)) {
+         alert("The Modify Operator Properties window has been opened. Please close the window first!");//修改操作员属性窗口已经打开，请先关闭该窗口
+         infoWin.focus();
+         return;
+      }
+      if (addWin != null && (! addWin.closed))
+         if (window.confirm("The Add Operator window has been opened. Close?"))//增加操作员窗口已经打开，是否关闭
+            addWin.close();
+         else
+            addWin.focus();
+      else
+         addWin = window.open('operInfo.jsp?operType='+operType,'add','width=650, height=500');
+   }
+
+   // 删除操作员
+   function delOper() {
+      var operType = '';
+      var pid = '';
+      if(document.view.pageflag.value=='member'){
+        operType = 'del';
+        pid = document.view.pid.value;
+      }
+
+       if (unLockWin != null && (! unLockWin.closed)) {
+         alert("The Unlock Operator window has been opened. Please close the window first!");//操作员解禁窗口已经打开，请先关闭该窗口
+         unLockWin.focus();
+         return;
+      }
+      if (addWin != null && (! addWin.closed)) {
+         alert("The Add Operator window has been opened. Please close the window first!");//增加操作员窗口已经打开，请先关闭该窗口
+         addWin.focus();
+         return;
+      }
+      if (infoWin != null && (! infoWin.closed)) {
+         alert("The Modify Operator Properties window has been opened. Please close the window first!");//修改操作员属性窗口已经打开，请先关闭该窗口
+         infoWin.focus();
+         return;
+      }
+      if (delWin != null && (! delWin.closed))
+         if (window.confirm("The Delete Operator window has been opened. Close?"))//删除操作员窗口已经打开，是否关闭？
+            delWin.close();
+         else
+            delWin.focus();
+      else
+         delWin = window.open('operDel.jsp?operID='+document.view.operID.value+'&operType='+operType+'&pid='+pid,'del','width=300, height=80');
+   }
+
+   // 修改操作员属性
+   function updateOper() {
+      var pid = document.view.pid.value;
+      var stat = document.view.operStat.value;
+      var operType = '';
+      if(document.view.pageflag.value=='member'){
+        operType = 'update';
+      }
+      if (unLockWin != null && (! unLockWin.closed)) {
+         alert("The Unlock Operator window has been opened. Please close the window first!");//操作员解禁窗口已经打开，请先关闭该窗口
+         unLockWin.focus();
+         return;
+      }
+      if (addWin != null && (! addWin.closed)) {
+         alert("The Add Operator window has been opened. Please close the window first!");//增加操作员窗口已经打开，请先关闭该窗口
+         addWin.focus();
+         return;
+      }
+      if (delWin != null && (! delWin.closed)) {
+         alert("The Delete Operator window has been opened. Please close the window first!");//删除操作员窗口已经打开，请先关闭该窗口
+         delWin.focus();
+         return;
+      }
+      if (infoWin != null && (! infoWin.closed))
+         if (window.confirm("The Modify Operator window has been opened. Close?"))//修改操作员窗口已经打开，是否关闭？
+            infoWin.close();
+         else
+            infoWin.focus();
+      else
+         infoWin = window.open('operInfo.jsp?operID=' + document.view.operID.value+'&serflag='+parent.listFrame.document.view.serflag.value+'&name='+parent.listFrame.document.view.opername.value+'&operType='+operType+'&pid='+pid+'&stat='+stat,'update','width=650, height=550');
+   }
+
+   // 检测哪个窗口已经被打开
+   function checkWin () {
+      if (addWin != null && (! addWin.closed)) {
+         alert("The Add Operator window has been opened.");//增加操作员窗口已经打开
+         addWin.focus();
+         return 'add';                                  // 增加窗口被打开
+      }
+      else if (delWin != null && (! delWin.closed)) {
+         alert("The Delete Operator window has been opened.");//删除操作员窗口已经打开
+         delWin.focus();
+         return 'del';                                  // 删除窗口被打开
+      }
+      else if (infoWin != null && (! infoWin.closed)) {
+         alert("The Modify Operator window has been opened.");//修改操作员窗口已经打开
+         infoWin.focus();
+         return 'info';                                 // 属性窗口被打开
+      }
+      else
+         return 'no';                                   // 无打开窗口
+   }
+
+   // 查看操作员的成员
+   function detail(){
+     // 要查看所属成员的id号
+     var opid = document.view.operID.value;
+     document.view.pid.value = opid;
+     mm.style.display = "none";
+     add.style.display = "none";
+     back.style.display = "block";
+     document.view.pageflag.value = "member";
+     parent.listFrame.refresh();
+     parent.groupFrame.refresh();
+     parent.currentFrame.refresh();
+     parent.listFrame.document.location.href = "memberTree.jsp?operID="+opid+"&memberID="+opid+"&operType=init";
+   }
+
+  
+   function refresh () {
+      //parent.listFrame.refresh();
+      parent.document.location.href = 'operManage.html';
+   }
+
+   function refresh2 (serflag,name) {
+
+      parent.listFrame.refresh2(name,serflag);
+
+   }
+
+   // 刷新当前登录的操作系统
+   function refreshCurrent () {
+     // parent.currentFrame.document.view.operID.value = document.view.operID.value;
+     // parent.currentFrame.document.view.serviceKey.value = document.view.serviceKey.value;
+     // parent.currentFrame.refresh();
+    var operType = '';
+      if(document.view.pageflag.value=='member'){
+        operType = 'unlock';
+      }
+      if (delWin != null && (! delWin.closed)) {
+         alert("The Delete Operator window has been opened. Please close the window first!");//删除操作员窗口已经打开，请先关闭该窗口
+         delWin.focus();
+         return;
+      }
+      if (infoWin != null && (! infoWin.closed)) {
+         alert("The Modify Operator Properties window has been opened. Please close the window first!");//修改操作员属性窗口已经打开，请先关闭该窗口
+         infoWin.focus();
+         return;
+      }
+       if (addWin != null && (! addWin.closed)) {
+         alert("The Add Operator window has been opened. Please close the window first!");//增加操作员窗口已经打开，请先关闭该窗口
+         addWin.focus();
+         return;
+      }
+      if (unLockWin != null && (! unLockWin.closed))
+         if (window.confirm("The Add Operator window has been opened. Close?"))//增加操作员窗口已经打开，是否关闭
+            unLockWin.close();
+         else
+            unLockWin.focus();
+      else
+         unLockWin = window.open('operSignOut.jsp?operID=' + document.view.operID.value+'&operType='+operType,'del','width=300, height=80');
+   }
+
+   // 删除树形结构的成员
+   function delMember(id,pid) {
+     parent.listFrame.delNode(id);
+     document.view.unlock.disabled = true;
+     document.view.del.disabled = true;
+     document.view.attr.disabled = true;
+     document.view.signOut.disabled = true;
+   }
+
+   // 更新树形结构的成员
+   function updateMember(pid,id,name,statFlag){
+     parent.listFrame.setStatFlag(id,statFlag);
+     parent.listFrame.setName(id,name);
+
+     document.view.unlock.disabled = true;
+     document.view.del.disabled = true;
+     document.view.attr.disabled = true;
+     document.view.signOut.disabled = true;
+   }
+
+   function unlockMember(id,name){
+     var opname = name+'(Normal)';
+     parent.listFrame.setName(id,opname);
+     document.view.unlock.disabled = true;
+     document.view.del.disabled = true;
+     document.view.attr.disabled = true;
+     document.view.signOut.disabled = true;
+   }
+
+   function goback() {
+     back.style.display = "none";
+     mm.style.display = "block";
+     add.style.display = "block";
+     document.view.member.disabled = true;
+     document.view.pageflag.value = "";
+     parent.listFrame.refresh();
+     parent.listFrame.document.location.href = "operList.jsp";
+   }
+</script>
+</head>
+<body class="body-style1">
+<form name="view">
+<input type="hidden" name="operID" value="">
+<input type="hidden" name="operStat" value="">
+<input type="hidden" name="serviceKey" value="">
+<input type="hidden" name="idid" value="">
+<input type="hidden" name="pageflag" value="">
+<input type="hidden" name="pid" value="">
+
+<table border="0" height="400">
+  <tr height="20%" valign="middle">
+    <td><input type="button" name="unlock" value="Unlock" class="button-style4"  onclick="javascript:unLockOper()"  disabled></td>
+  </tr>
+  <tr height="20%" valign="middle">
+    <td><input type="button" name="refresh" value="Refresh" class="button-style4" onClick="parent.document.location.href = 'operManage.html'"></td>
+  </tr>
+  <tr id="add" height="20%" valign="middle" style="display:block">
+    <td><input type="button" name="add" value="Add" class="button-style4" onClick="javascript:addOper()"></td>
+  </tr>
+  <tr height="20%" valign="middle">
+    <td><input type="button" name="del" value="Delete" class="button-style4" onClick="javascript:delOper()" disabled></td>
+  </tr>
+  <tr height="20%" valign="middle">
+    <td><input type="button" name="attr" value="Property" class="button-style4" onClick="javascript:updateOper()" disabled></td>
+  </tr>
+  <tr id="mm" height="20%" style="display:block">
+    <td><input type="button" name="member" value="Members" class="button-style4" onClick="javascript:detail()" disabled></td>
+  </tr>
+  <tr id="back" height="20%" style="display:none">
+    <td><input type="button" name="back" value="Back" class="button-style4" onClick="javascript:goback()"></td>
+  </tr>
+</table>
+<table border="0" height="12%">
+  <tr valign="middle">
+    <td><input type="button" name="signOut" value="Sign out" class="button-style4" onClick="javascript:refreshCurrent()" disabled></td>
+  </tr>
+</table>
+<table border="1" bordercolorlight="#669933" bordercolordark="#ffffff" cellspacing="0" cellpadding="0" class="table-style1">
+  <tr>
+    <td><input type="text" name="operName" value="" disabled style="width: 80">
+  </tr>
+  <tr>
+    <td><input type="text" name="serviceName" value="" disabled style="width: 80">
+  </tr>
+</table>
+</form>
+</body>
+</html>

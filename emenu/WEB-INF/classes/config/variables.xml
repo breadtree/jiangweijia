@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variables>
+<classalias name="zte.zxyw50.colorring.util.RingViewHelper" alias="RingViewHelper" />
+<classalias name="zte.zxyw50.user.util.UserViewHelper" alias="UserViewHelper" />
+<classalias name="zte.zxyw50.util.CrbtUtil" alias="CrbtUtil" />
+</variables>

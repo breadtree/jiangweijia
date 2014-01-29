@@ -1,0 +1,42 @@
+<%@include file="/base/included.jsp" %>
+<%@ include file="base/commonhead.jsp" %>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title></title>
+</head>
+
+<body bgcolor="#C6DCEE" leftmargin="12" align="center">
+<table  width="280" height="95" border="0">
+  <tr>
+    <td width="100%" align="center" height="69" valign="middle">
+    <div id="hintContent" ></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" 　align="center" height="16" align="center">
+                  <input type="button" onclick="yes();" value="是(yes)"/>
+                  <input type="button" onclick="no();"  value="否(no)"/></td>
+  </tr>
+</table>
+</body>
+
+</html>
+
+
+<SCRIPT LANGUAGE="JavaScript" for="window" even="onload">
+var hint = window.dialogArguments;
+
+window.returnValue ="no";
+
+document.all("hintContent").innerHTML = hint;
+
+function yes(){
+  window.returnValue = "yes";
+  window.close();
+}
+function no(){
+  window.returnValue = "no";
+  window.close();
+}
+</SCRIPT>

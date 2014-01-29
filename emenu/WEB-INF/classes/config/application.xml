@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tao >
+
+<action name="/xmlsave.action" className="com.zte.tao.action.SaveDataAction"/>
+<action name="/xmlloaddata.action" className="com.zte.tao.action.XmlLoadDataAction"/>
+<action name="/create.action" className="com.zte.tao.action.CreateAction"/>
+<action name="/delete.action" className="com.zte.tao.action.DeleteAction"/>
+<action name="/modified.action" className="com.zte.tao.action.ModifiedAction"/>
+
+<module name="/colorring" appName="crbt" serviceKey="pstn51" local="1" serviceType="0" serviceDBAlias="zxdbp_51" defaultSCP="1112" homePage="/index.jsp" errorPage="/base/error.jsp"/>
+<logger configfile="/log4j.properties" />
+<!-- lang ma be zh_CN,zh_TW,en,ar;  charset may be ISO-8859-1,GBK  -->
+<apppara lang="en;"  charset="UTF-8" />
+
+<task className="com.zte.common.variable.VariableTask" name="variable"/>
+<task className="com.zte.common.pdu.PDUTask" name="pdu"/>
+<task className="com.zte.common.interpret.InterpreterTask" name="interpreter"/>
+<task className="com.zte.common.menu.MenuTask" name="menu"/>
+<task className="zte.zxyw50.util.CRBTTask" name="crbttask"/>
+</tao>

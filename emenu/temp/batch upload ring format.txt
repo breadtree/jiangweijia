@@ -1,0 +1,17 @@
+file suffix:.lst
+first line:spcode
+ring tone format start from second line:
+0:#
+1-40:filename
+41-80:ringname
+81-120:auther
+121-160:supplier
+161-164:price
+165-172:craccount
+173-192:expiredate
+193-212:authnamee
+213-216:uservalidday
+217-236:ringid
+237-238:isfreewill
+239-239:preflag
+240-279:prefilename

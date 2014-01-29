@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus>
+<menu name="xx" visible="false" text="中国">
+<menuitem text="" image="" href="" visible="" target=""/>
+<menuitem text="" image="" href="" visible="" target=""/>
+<menuitem text="" image="" href="" visible="" target=""/>
+</menu>
+<menu name="nbnb" visible="false" text="国">
+<menuitem text="" image="" href="" visible="" target=""/>
+<menuitem text="" image="" href="" visible="" target=""/>
+<menuitem text="" image="" href="" visible="" target=""/>
+</menu>
+</menus>

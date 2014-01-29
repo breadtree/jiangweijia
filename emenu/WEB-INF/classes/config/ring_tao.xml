@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tao>
+	<!--铃音排行查询-->
+	<metadata name="RingSortBoardBean" type="join" querydao="default"
+		operatedao="default">
+		<object>s50ringboard,s50ring</object>
+		<field name="ringindex" mapped="s50ringboard.ringindex" />
+		<field name="ringid" mapped="s50ringboard.ringid" />
+		<field name="name" mapped="s50ring.ringlabel" />
+		<field name="price" mapped="s50ring.ringfee" />
+		<field name="validdate" mapped="s50ring.validdate" />
+		<field name="uploadtime" mapped="s50ring.uploadtime" />
+		<field name="singgername" mapped="s50ring.singgername" />
+		<field name="singerid" mapped="s50ring.singerid" />
+		<field name="spname" mapped="s50ring.spname" />
+		<field name="buytimes" mapped="s50ring.buytimes" />
+		<field name="largesstimes" mapped="s50ring.largesstimes" />
+		<field name="order" mapped="s50ringboard.buytimes" />
+		<field name="prestime" mapped="s50ringboard.prestime" />
+		<field name="mediatype" mapped="s50ring.mediatype" />
+		<field name="filetype" mapped="s50ring.filetype" />
+		<related name="s50ring"
+			condition="s50ringboard.ringindex = s50ring.ringindex and s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4 and s50ring.status=0 " />
+	</metadata>
+
+	<metadata name="RingInfoBean" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50ring</object>
+		<field name="ringindex" mapped="s50ring.ringindex" />
+		<field name="allindex" mapped="s50ring.allindex" />
+		<field name="ringid" mapped="s50ring.ringid" />
+		<field name="name" mapped="s50ring.ringlabel" />
+		<field name="price" mapped="s50ring.ringfee" />
+		<field name="validdate" mapped="s50ring.validdate" />
+		<field name="uservalidday" mapped="s50ring.uservalidday" />
+		<field name="uploadtime" mapped="s50ring.uploadtime" />
+		<field name="isfreewill" mapped="s50ring.isfreewill" />
+		<field name="ringlong" mapped="s50ring.ringlong" />
+		<field name="singgername" mapped="s50ring.singgername" />
+		<field name="singerid" mapped="s50ring.singerid" />
+		<field name="buytimes" mapped="s50ring.buytimes" />
+		<field name="vmid" mapped="s50ring.vmid" />
+		<field name="msgid" mapped="s50ring.msgid" />
+		<field name="largesstimes" mapped="s50ring.largesstimes" />
+		<field name="spname" mapped="s50ring.spname" />
+		<field name="spindex" mapped="s50ring.spindex" />
+		<field name="mediatype" mapped="s50ring.mediatype" />
+		<field name="filetype" mapped="s50ring.filetype" />
+	</metadata>
+
+<metadata name="RingQueryBean" bean="zte.zxyw50.colorring.domain.CRBTRingDO" type="join" querydao="default" operatedao="default">
+    <object>s50ring,s50spinf</object>
+    <field name ="ringindex" mapped="s50ring.ringindex"/>
+    <field name ="allindex" mapped="s50ring.allindex"/>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="name" mapped="s50ring.ringlabel"/>
+    <field name ="price" mapped="s50ring.ringfee"/>
+	<field name ="ringfee2" mapped="s50ring.ringfee2"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="uploadtime" mapped="s50ring.uploadtime"/>
+    <field name ="isfreewill" mapped="s50ring.isfreewill"/>
+    <field name ="ringlong" mapped="s50ring.ringlong"/>
+    <field name ="singgername" mapped="s50ring.singgername"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="buytimes" mapped="s50ring.buytimes"/>
+    <field name ="vmid" mapped="s50ring.vmid"/>
+    <field name ="msgid" mapped="s50ring.msgid"/>
+    <field name ="largesstimes" mapped="s50ring.largesstimes"/>
+    <field name ="spname" mapped="s50spinf.spname"/>
+    <field name ="spindex" mapped="s50spinf.spindex"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+    <related name="s50spinf" condition="s50ring.spindex = s50spinf.spindex and s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4 and s50ring.status=0 "/>
+  </metadata>
+
+    <metadata name="MyFavoriteRing" bean="zte.zxyw50.colorring.domain.CRBTRingDO" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50spinf</object>
+    <field name ="ringindex" mapped="s50ring.ringindex"/>
+    <field name ="allindex" mapped="s50ring.allindex"/>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="name" mapped="s50ring.ringlabel"/>
+    <field name ="price" mapped="s50ring.ringfee"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="uploadtime" mapped="s50ring.uploadtime"/>
+    <field name ="isfreewill" mapped="s50ring.isfreewill"/>
+    <field name ="ringlong" mapped="s50ring.ringlong"/>
+    <field name ="singgername" mapped="s50ring.singgername"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="buytimes" mapped="s50ring.buytimes"/>
+    <field name ="vmid" mapped="s50ring.vmid"/>
+    <field name ="msgid" mapped="s50ring.msgid"/>
+    <field name ="largesstimes" mapped="s50ring.largesstimes"/>
+    <field name ="spname" mapped="s50spinf.spname"/>
+    <field name ="spindex" mapped="s50spinf.spindex"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+    <related name="s50spinf" condition="s50ring.spindex = s50spinf.spindex and s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4 and s50ring.status=0 "/>
+  </metadata>
+
+
+
+ <metadata name="RingQueryBeanNotEng" bean="zte.zxyw50.colorring.domain.CRBTRingDO" type="table" from="default" querydao="default" operatedao="default">
+   	<object>s50searchrings</object>
+  </metadata>
+
+<metadata name="GroupRingBean" bean="zte.zxyw50.colorring.domain.CRBTRingDO" type="join" querydao="default" operatedao="default">
+    <object>s50ring,s50spinf</object>
+    <field name ="ringindex" mapped="s50ring.ringindex"/>
+    <field name ="allindex" mapped="s50ring.allindex"/>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="name" mapped="s50ring.ringlabel"/>
+    <field name ="price" mapped="s50ring.ringfee"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="uploadtime" mapped="s50ring.uploadtime"/>
+    <field name ="isfreewill" mapped="s50ring.isfreewill"/>
+    <field name ="ringlong" mapped="s50ring.ringlong"/>
+    <field name ="singgername" mapped="s50ring.singgername"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="buytimes" mapped="s50ring.buytimes"/>
+    <field name ="vmid" mapped="s50ring.vmid"/>
+    <field name ="msgid" mapped="s50ring.msgid"/>
+    <field name ="largesstimes" mapped="s50ring.largesstimes"/>
+    <field name ="spname" mapped="s50spinf.spname"/>
+    <field name ="spindex" mapped="s50spinf.spindex"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+    <related name="s50spinf" condition="s50ring.spindex = s50spinf.spindex and s50ring.ringtype=8 and s50ring.status=0  "/>
+	</metadata>
+
+
+	<metadata name="PersonalRing0" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring00,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring00.ringindex" />
+		<field name="allindex" mapped="s50pernalring00.allindex" />
+		<field name="ringid" mapped="s50pernalring00.ringid" />
+		<field name="type" mapped="s50pernalring00.ringtype" />
+		<field name="name" mapped="s50pernalring00.ringlabel" />
+		<field name="validdate" mapped="s50pernalring00.validdate" />
+		<field name="uploadtime" mapped="s50pernalring00.uploadtime" />
+		<field name="vmid" mapped="s50pernalring00.vmid" />
+		<field name="msgid" mapped="s50pernalring00.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring00.spindex" />
+		<field name="mediatype" mapped="s50pernalring00.mediatype" />
+		<field name="filetype" mapped="s50pernalring00.filetype" />
+	<field name ="price"  mapped="s50pernalring00.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring00.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring00.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring00.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring00.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing1" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring01,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring01.ringindex" />
+		<field name="allindex" mapped="s50pernalring01.allindex" />
+		<field name="ringid" mapped="s50pernalring01.ringid" />
+		<field name="name" mapped="s50pernalring01.ringlabel" />
+		<field name="type" mapped="s50pernalring01.ringtype" />
+		<field name="validdate" mapped="s50pernalring01.validdate" />
+		<field name="uploadtime" mapped="s50pernalring01.uploadtime" />
+		<field name="vmid" mapped="s50pernalring01.vmid" />
+		<field name="msgid" mapped="s50pernalring01.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring01.spindex" />
+		<field name="mediatype" mapped="s50pernalring01.mediatype" />
+		<field name="filetype" mapped="s50pernalring01.filetype" />
+	<field name ="price"  mapped="s50pernalring01.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring01.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring01.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring01.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring01.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing2" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring02,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring02.ringindex" />
+		<field name="allindex" mapped="s50pernalring02.allindex" />
+		<field name="ringid" mapped="s50pernalring02.ringid" />
+		<field name="type" mapped="s50pernalring02.ringtype" />
+		<field name="name" mapped="s50pernalring02.ringlabel" />
+		<field name="validdate" mapped="s50pernalring02.validdate" />
+		<field name="uploadtime" mapped="s50pernalring02.uploadtime" />
+		<field name="vmid" mapped="s50pernalring02.vmid" />
+		<field name="msgid" mapped="s50pernalring02.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring02.spindex" />
+		<field name="mediatype" mapped="s50pernalring02.mediatype" />
+		<field name="filetype" mapped="s50pernalring02.filetype" />
+	<field name ="price"  mapped="s50pernalring02.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring02.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring02.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring02.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring02.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing3" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring03,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring03.ringindex" />
+		<field name="allindex" mapped="s50pernalring03.allindex" />
+		<field name="ringid" mapped="s50pernalring03.ringid" />
+		<field name="type" mapped="s50pernalring03.ringtype" />
+		<field name="name" mapped="s50pernalring03.ringlabel" />
+		<field name="validdate" mapped="s50pernalring03.validdate" />
+		<field name="uploadtime" mapped="s50pernalring03.uploadtime" />
+		<field name="vmid" mapped="s50pernalring03.vmid" />
+		<field name="msgid" mapped="s50pernalring03.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring03.spindex" />
+		<field name="mediatype" mapped="s50pernalring03.mediatype" />
+		<field name="filetype" mapped="s50pernalring03.filetype" />
+	<field name ="price"  mapped="s50pernalring03.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring03.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring03.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring03.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring03.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing4" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring04,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring04.ringindex" />
+		<field name="allindex" mapped="s50pernalring04.allindex" />
+		<field name="ringid" mapped="s50pernalring04.ringid" />
+		<field name="type" mapped="s50pernalring04.ringtype" />
+		<field name="name" mapped="s50pernalring04.ringlabel" />
+		<field name="validdate" mapped="s50pernalring04.validdate" />
+		<field name="uploadtime" mapped="s50pernalring04.uploadtime" />
+		<field name="vmid" mapped="s50pernalring04.vmid" />
+		<field name="msgid" mapped="s50pernalring04.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring04.spindex" />
+		<field name="mediatype" mapped="s50pernalring04.mediatype" />
+		<field name="filetype" mapped="s50pernalring04.filetype" />
+	<field name ="price"  mapped="s50pernalring04.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring04.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring04.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring04.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring04.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing5" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring05,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring05.ringindex" />
+		<field name="allindex" mapped="s50pernalring05.allindex" />
+		<field name="ringid" mapped="s50pernalring05.ringid" />
+		<field name="type" mapped="s50pernalring05.ringtype" />
+		<field name="name" mapped="s50pernalring05.ringlabel" />
+		<field name="validdate" mapped="s50pernalring05.validdate" />
+		<field name="uploadtime" mapped="s50pernalring05.uploadtime" />
+		<field name="vmid" mapped="s50pernalring05.vmid" />
+		<field name="msgid" mapped="s50pernalring05.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring05.spindex" />
+		<field name="mediatype" mapped="s50pernalring05.mediatype" />
+		<field name="filetype" mapped="s50pernalring05.filetype" />
+	<field name ="price"  mapped="s50pernalring05.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring05.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring05.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring05.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring05.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing6" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring06,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring06.ringindex" />
+		<field name="allindex" mapped="s50pernalring06.allindex" />
+		<field name="ringid" mapped="s50pernalring06.ringid" />
+		<field name="type" mapped="s50pernalring06.ringtype" />
+		<field name="name" mapped="s50pernalring06.ringlabel" />
+		<field name="validdate" mapped="s50pernalring06.validdate" />
+		<field name="uploadtime" mapped="s50pernalring06.uploadtime" />
+		<field name="vmid" mapped="s50pernalring06.vmid" />
+		<field name="msgid" mapped="s50pernalring06.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring06.spindex" />
+		<field name="mediatype" mapped="s50pernalring06.mediatype" />
+		<field name="filetype" mapped="s50pernalring06.filetype" />
+	<field name ="price"  mapped="s50pernalring06.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring06.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring06.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring06.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring06.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing7" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring07,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring07.ringindex" />
+		<field name="allindex" mapped="s50pernalring07.allindex" />
+		<field name="ringid" mapped="s50pernalring07.ringid" />
+		<field name="type" mapped="s50pernalring07.ringtype" />
+		<field name="name" mapped="s50pernalring07.ringlabel" />
+		<field name="validdate" mapped="s50pernalring07.validdate" />
+		<field name="uploadtime" mapped="s50pernalring07.uploadtime" />
+		<field name="vmid" mapped="s50pernalring07.vmid" />
+		<field name="msgid" mapped="s50pernalring07.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring07.spindex" />
+		<field name="mediatype" mapped="s50pernalring07.mediatype" />
+		<field name="filetype" mapped="s50pernalring07.filetype" />
+	<field name ="price"  mapped="s50pernalring07.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring07.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring07.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring07.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring07.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing8" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring08,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring08.ringindex" />
+		<field name="allindex" mapped="s50pernalring08.allindex" />
+		<field name="ringid" mapped="s50pernalring08.ringid" />
+		<field name="type" mapped="s50pernalring08.ringtype" />
+		<field name="name" mapped="s50pernalring08.ringlabel" />
+		<field name="validdate" mapped="s50pernalring08.validdate" />
+		<field name="uploadtime" mapped="s50pernalring08.uploadtime" />
+		<field name="vmid" mapped="s50pernalring08.vmid" />
+		<field name="msgid" mapped="s50pernalring08.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring08.spindex" />
+		<field name="mediatype" mapped="s50pernalring08.mediatype" />
+		<field name="filetype" mapped="s50pernalring08.filetype" />
+	<field name ="price"  mapped="s50pernalring08.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring08.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring08.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring08.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring08.spindex = s50spinf.spindex " />
+	</metadata>
+	<metadata name="PersonalRing9" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50pernalring09,s50spinf</object>
+		<field name="ringindex" mapped="s50pernalring09.ringindex" />
+		<field name="allindex" mapped="s50pernalring09.allindex" />
+		<field name="ringid" mapped="s50pernalring09.ringid" />
+		<field name="type" mapped="s50pernalring09.ringtype" />
+		<field name="name" mapped="s50pernalring09.ringlabel" />
+		<field name="validdate" mapped="s50pernalring09.validdate" />
+		<field name="uploadtime" mapped="s50pernalring09.uploadtime" />
+		<field name="vmid" mapped="s50pernalring09.vmid" />
+		<field name="msgid" mapped="s50pernalring09.msgid" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50pernalring09.spindex" />
+		<field name="mediatype" mapped="s50pernalring09.mediatype" />
+		<field name="filetype" mapped="s50pernalring09.filetype" />
+	<field name ="price"  mapped="s50pernalring09.ringfee"/>
+	    <field name ="ringspell"  mapped="s50pernalring09.ringspell"/>
+	    <field name ="ringlabel"  mapped="s50pernalring09.ringlabel"/>
+	    <field name ="ringtype"  mapped="s50pernalring09.ringtype"/>
+		<related name="s50spinf" condition="s50pernalring09.spindex = s50spinf.spindex " />
+	</metadata>
+
+
+	<metadata name="s50bulletin" type="table" querydao="default"
+		operatedao="default">
+		<object>s50bulletin</object>
+		<field name="bindex" mapped="bindex" />
+		<field name="btype" mapped="btype" />
+		<field name="recorddate" mapped="recorddate" />
+		<field name="validdate" mapped="validdate" />
+		<field name="expiredate" mapped="expiredate" />
+		<field name="operator" mapped="operator" />
+		<field name="readercode" mapped="readercode" />
+		<field name="title" mapped="title" />
+		<field name="content" mapped="content" />
+		<field name="attach" mapped="attach" />
+		<key name="bindex" fields="bindex" />
+	</metadata>
+
+	<!--select citycode, cityname from s50citycode order by citycode-->
+	<metadata name="s50citycode" type="table" querydao="default"
+		operatedao="default">
+		<object>s50citycode</object>
+		<field name="citycode" mapped="citycode" />
+		<field name="cityname" mapped="cityname" />
+		<key name="citycode" fields="citycode" />
+	</metadata>
+
+
+	<metadata name="s50spinf" type="table" querydao="default"
+		operatedao="default">
+		<object>s50spinf</object>
+		<field name="spindex" mapped="spindex" />
+		<field name="spcode" mapped="spcode" />
+		<field name="curnumber" mapped="curnumber" />
+		<field name="maxnumber" mapped="maxnumber" />
+		<field name="spname" mapped="spname" />
+		<field name="ischeck" mapped="ischeck" />
+		<field name="spcent" mapped="spcent" />
+		<field name="url" mapped="url" />
+		<field name="corpname" mapped="corpname" />
+		<field name="faxnumber" mapped="faxnumber" />
+		<field name="phonenumber" mapped="phonenumber" />
+		<field name="postno" mapped="postno" />
+		<field name="linkman" mapped="linkman" />
+		<field name="customer" mapped="customer" />
+		<field name="corpaddress" mapped="corpaddress" />
+		<field name="isopcheck" mapped="isopcheck" />
+		<field name="ifextra" mapped="ifextra" />
+		<field name="extraspcode" mapped="extraspcode" />
+		<key name="spindex" fields="spindex" />
+		<key name="spcode" fields="spcode" />
+	</metadata>
+
+
+	<metadata name="s50usertype" type="table" querydao="default"
+		operatedao="default">
+		<object>s50usertype</object>
+		<field name="usertype" mapped="usertype" />
+		<field name="monthfee" mapped="monthfee" />
+		<field name="customring" mapped="customring" />
+		<field name="totalring" mapped="totalring" />
+		<field name="totalcnum" mapped="totalcnum" />
+		<field name="blacknum" mapped="blacknum" />
+		<field name="recordprice" mapped="recordprice" />
+		<field name="uploadprice" mapped="uploadprice" />
+		<field name="callinggroups" mapped="callinggroups" />
+		<field name="callingnumber" mapped="callingnumber" />
+		<field name="ringgroups" mapped="ringgroups" />
+		<field name="ringnumber" mapped="ringnumber" />
+		<field name="utlabel" mapped="utlabel" />
+		<field name="change" mapped="change" />
+		<field name="freenum" mapped="freenum" />
+		<field name="favornum" mapped="favornum" />
+		<field name="buytimes" mapped="buytimes" />
+		<field name="getpasstimes" mapped="getpasstimes" />
+	
+		<key name="usertype" fields="usertype" />
+	</metadata>
+
+
+	<metadata name="s50singer" type="table" querydao="default"
+		operatedao="default">
+		<object>s50singer</object>
+		<field name="singerid" mapped="singerid" />
+		<field name="singgername" mapped="singgername" />
+		<field name="descrip" mapped="descrip" />
+		<field name="singgersex" mapped="singgersex" />
+		<field name="spellsinger" mapped="spellsinger" />
+		<key name="singerid" fields="singerid" />
+	</metadata>
+
+	
+	<metadata name="s50catalog" type="table" querydao="default"
+		operatedao="default">
+		<object>s50catalog</object>
+		<field name="allindex" mapped="allindex" />
+		<field name="ringlibid" mapped="ringlibid" />
+		<field name="ringfee" mapped="ringfee" />
+		<field name="ringliblabel" mapped="ringliblabel" />
+		<field name="maxnumber" mapped="maxnumber" />
+		<field name="nodindex" mapped="nodindex" />
+		<field name="parentindex" mapped="parentindex" />
+		<field name="ifleafnod" mapped="ifleafnod" />
+		<field name="ringlibcode" mapped="ringlibcode" />
+		<field name="curclass" mapped="curclass" />
+		<key name="allindex" fields="allindex" />
+	</metadata>
+
+
+
+	<metadata name="RingGroupList"
+		bean="zte.zxyw50.colorring.domain.CRBTSysRingGroupDO" type="join"
+		querydao="default" operatedao="default">
+		<object>s50sysringgrp,s50spinf</object>
+		<field name="ringid" mapped="s50sysringgrp.ringgroup" />
+		<field name="name" mapped="s50sysringgrp.grouplabel" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50spinf.spindex" />
+		<field name="ringcnt" mapped="s50sysringgrp.ringcnt" />
+		<field name="price" mapped="s50sysringgrp.ringfee" />
+		<field name="buytimes" mapped="s50sysringgrp.buytimes" />
+		<field name="validdate" mapped="s50sysringgrp.validdate" />
+		<field name="ringClass" mapped="s50sysringgrp.ringgrptype" />
+		<field name="deletetime" mapped="s50sysringgrp.deletetime" />
+		<field name="description" mapped="s50sysringgrp.description" />
+		<field name="ischeck" mapped="s50sysringgrp.ischeck" />
+		<field name="isshow" mapped="s50sysringgrp.isshow" />
+		<field name="spcode" mapped="s50spinf.spcode" />
+                <field name ="cataindex" mapped="s50sysringgrp.cataindex"/>
+                <field name ="curcnt" mapped="s50sysringgrp.curcnt"/>
+		<related name="s50spinf"
+			condition="s50sysringgrp.spindex=s50spinf.spindex and s50sysringgrp.ischeck=2" />
+	</metadata>
+
+
+	<metadata name="GroupRingInfo" type="join" querydao="default"
+		operatedao="default">
+		<object>s50ring,s50sysringgrpmem</object>
+		<field name="ringid" mapped="s50ring.ringid" />
+		<field name="ringlabel" mapped="s50ring.ringlabel" />
+		<field name="singgername" mapped="s50ring.singgername" />
+		<field name="singerid" mapped="s50ring.singerid" />
+		<field name="validdate" mapped="s50ring.validdate" />
+		<field name="uservalidday" mapped="s50ring.uservalidday" />
+		<field name="ringindex" mapped="s50sysringgrpmem.ringindex" />
+		<field name="ringgroup" mapped="s50sysringgrpmem.ringgroup" />
+		<field name="mediatype" mapped="s50ring.mediatype" />
+		<field name="filetype" mapped="s50ring.filetype" />
+		<related name="s50sysringgrpmem"
+			condition="s50ring.ringid=s50sysringgrpmem.ringid and s50ring.status=0 " />
+	</metadata>
+
+
+	<metadata name="ActiveRingInfo" type="join" querydao="default"
+		operatedao="default">
+		<object>s50activityring,s50ring</object>
+		<field name="actno" mapped="s50activityring.actno" />
+		<field name="seqno" mapped="s50activityring.seqno" />
+		<field name="ringindex" mapped="s50activityring.ringindex" />
+		<field name="ringid" mapped="s50activityring.ringid" />
+		<field name="ringlabel" mapped="s50ring.ringlabel" />
+		<field name="ringauthor" mapped="s50ring.ringauthor" />
+		<field name="ringfee" mapped="s50ring.ringfee" />
+		<field name="buytimes" mapped="s50ring.buytimes" />
+		<field name="largesstimes" mapped="s50ring.largesstimes" />
+		<field name="mediatype" mapped="s50ring.mediatype" />
+		<field name="filetype" mapped="s50ring.filetype" />
+		<related name="s50ring"
+			condition="s50activityring.ringid = s50ring.ringid and s50ring.status=0 " />
+	</metadata>
+
+
+	<metadata name="DiscountList" type="join" querydao="default"
+		operatedao="default">
+		<object>s50discount,s50spinf</object>
+		<field name="discountid" mapped="s50discount.discountid" />
+		<field name="discountname" mapped="s50discount.discountname" />
+		<field name="rentfee" mapped="s50discount.rentfee" />
+		<field name="freerings" mapped="s50discount.freerings" />
+		<field name="expiredate" mapped="s50discount.expiredate" />
+		<field name="discountdesc" mapped="s50discount.discountdesc" />
+		<field name="spname" mapped="s50spinf.spname" />
+		<field name="spindex" mapped="s50discount.spindex" />
+		<related name="s50spinf"
+			condition="s50discount.spindex = s50spinf.spindex and s50discount.ischeck=2 and s50discount.isshow=1 and s50discount.bflag=1" />
+	</metadata>
+	<!--
+  IVR Ring Query
+  -->
+	<metadata name="IVRRingQueryBean" bean="zte.zxyw50.colorring.domain.CRBTRingDO"
+		type="join" querydao="default" operatedao="default">
+		<object>s50ring,s50sortringorder,s50ringcatalog</object>
+		<field name="ringindex" mapped="s50sortringorder.ringindex" />
+		<field name="allindex" mapped="s50ring.allindex" />
+		<field name="ringid" mapped="s50ring.ringid" />
+		<field name="name" mapped="s50ring.ringlabel" />
+		<field name="price" mapped="s50ring.ringfee" />
+		<field name="validdate" mapped="s50ring.validdate" />
+		<field name="uservalidday" mapped="s50ring.uservalidday" />
+		<field name="uploadtime" mapped="s50ring.uploadtime" />
+		<field name="isfreewill" mapped="s50ring.isfreewill" />
+		<field name="ringlong" mapped="s50ring.ringlong" />
+		<field name="singgername" mapped="s50ring.singgername" />
+		<field name="singerid" mapped="s50ring.singerid" />
+		<field name="buytimes" mapped="s50ring.buytimes" />
+		<field name="vmid" mapped="s50ring.vmid" />
+		<field name="msgid" mapped="s50ring.msgid" />
+		<field name="largesstimes" mapped="s50ring.largesstimes" />
+		<field name="spname" mapped="s50ring.spname" />
+		<field name="spindex" mapped="s50ring.spindex" />
+		<field name="mediatype" mapped="s50ring.mediatype" />
+		<field name="filetype" mapped="s50ring.filetype" />
+		<related name="s50sortringorder"
+			condition="s50sortringorder.ringindex = s50ring.ringindex and s50sortringorder.ordertype = 1 and s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4 and s50ring.status=0 " />
+		<related name="s50ringcatalog"
+			condition="s50sortringorder.allindex = s50ringcatalog.allindex  " />
+	</metadata>
+<metadata name="UserGroupRingInfo00" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem00,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem00.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem00.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem00" condition="s50ring.ringid=s50usersysringgrpmem00.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo01" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem01,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem01.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem01.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem01" condition="s50ring.ringid=s50usersysringgrpmem01.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo02" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem02,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem02.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem02.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem02" condition="s50ring.ringid=s50usersysringgrpmem02.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo03" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem03,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem03.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem03.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem03" condition="s50ring.ringid=s50usersysringgrpmem03.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo04" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem04,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem04.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem04.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem04" condition="s50ring.ringid=s50usersysringgrpmem04.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+   <metadata name="UserGroupRingInfo05" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem05,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem05.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem05.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem05" condition="s50ring.ringid=s50usersysringgrpmem05.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+   <metadata name="UserGroupRingInfo06" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem06,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem06.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem06.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem06" condition="s50ring.ringid=s50usersysringgrpmem06.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+
+   <metadata name="UserGroupRingInfo07" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem07,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem07.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem07.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem07" condition="s50ring.ringid=s50usersysringgrpmem07.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo08" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem08,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem08.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem08.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem08" condition="s50ring.ringid=s50usersysringgrpmem08.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+  <metadata name="UserGroupRingInfo09" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50usersysringgrpmem09,s50singer</object>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+	<field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="singgername" mapped="s50singer.singgername"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uservalidday" mapped="s50ring.uservalidday"/>
+    <field name ="ringindex" mapped="s50usersysringgrpmem09.ringindex"/>
+    <field name ="ringgroup" mapped="s50usersysringgrpmem09.ringgroup"/>
+	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+	<field name ="rtspurl" mapped="s50ring.rtspurl"/>
+    <related name="s50usersysringgrpmem09" condition="s50ring.ringid=s50usersysringgrpmem09.ringid"/>
+    <related name="s50singer" condition="s50ring.singerid=s50singer.singerid"/>
+  </metadata>
+
+ <metadata name="RingPromoList" type="join" querydao="default" operatedao="default">
+    <object>s50syspromoring,s50ring</object>
+    <field name ="ringid" mapped="s50syspromoring.ringid"/>
+	<field name ="promotype" mapped="s50syspromoring.promotype"/>
+	<field name ="nrenttype" mapped="s50syspromoring.nrenttype"/>
+	<field name ="freedays" mapped="s50syspromoring.freedays"/>
+	<field name ="discount" mapped="s50syspromoring.discount"/>
+	<field name ="createdate" mapped="s50syspromoring.createdate"/>
+	<field name ="expiredate" mapped="s50syspromoring.expiredate"/>
+    <field name ="name" mapped="s50ring.ringlabel"/>
+    <field name ="price" mapped="s50ring.ringfee"/>
+    <field name ="validdate" mapped="s50ring.validdate"/>
+    <field name ="uploadtime" mapped="s50ring.uploadtime"/>
+    <field name ="singgername" mapped="s50ring.singgername"/>
+    <field name ="singerid" mapped="s50ring.singerid"/>
+    <field name ="spname" mapped="s50ring.spname"/>
+    <field name ="buytimes" mapped="s50ring.buytimes"/>
+    <field name ="largesstimes" mapped="s50ring.largesstimes"/>
+    <field name ="order" mapped="s50ring.buytimes"/>
+  	<field name ="mediatype" mapped="s50ring.mediatype"/>
+	<field name ="filetype" mapped="s50ring.filetype"/>
+    <related name="s50ring" condition=" s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4  and s50syspromoring.ringid=s50ring.ringid and s50syspromoring.promotype=2"/>
+  </metadata>
+</tao>

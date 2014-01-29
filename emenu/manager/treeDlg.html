@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Query tree</title>
+	<link rel="StyleSheet" href="dtree.css" type="text/css" />
+	<script type="text/javascript" src="dtree.js"></script>
+	<script type="text/javascript">
+	function doClose(id){
+	  returnValue = id;
+  	  top.close();
+	}
+	function init(){
+                var data;
+                if(window.document.all) {// ie
+                  data = window.dialogArguments.datasource;
+                } else {// firefox
+                  data = window.opener.myArguments;
+                }
+		if(data!=null&&data.length>0){
+			d = new dTree('d');
+			for(var i = 0;i<data.length;i++){
+				var rowdata = data[i];
+				/*
+				rowdata[0]  id 	Number Unique identity number
+				rowdata[1]  pid Number Number refering to the parent node. The value for the root node has to be -1.
+				rowdata[2]  name String Text label for the node.
+				rowdata[3]  flag for operation.
+				*/
+		      if(rowdata[1]=='-1')
+			     d.add(rowdata[0],rowdata[1],rowdata[2],"javascript:doClose('"+rowdata[0]+"')");
+  			  else if( rowdata[3]=='1')
+				    d.add(rowdata[0],rowdata[1],rowdata[2],"javascript:doClose('"+rowdata[0]+"')");
+		      else
+		         d.add(rowdata[0],rowdata[1],rowdata[2],'');
+			}
+			document.write(d);
+		}
+	}
+	</script>
+</head>
+<base target="_self">
+<body onunload="window_onunload()">
+<div class="dtree">
+	<script type="text/javascript">
+		init();
+		<!--
+		//-->
+                function window_onunload() {
+                  if(!window.document.all)//FireFox
+                  {
+                    window.opener.myAction.returnAction(window.returnValue)
+                  }
+                }
+	</script>
+
+</div>
+</body>
+
+</html>

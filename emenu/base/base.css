@@ -1,0 +1,155 @@
+.nodata {
+       FONT-SIZE: 12px; COLOR: #16496f; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #f7fcff
+}
+.showtd {
+    font-family: Arial;
+    font-size: 11pt;
+}
+.table-style {
+    font-family: Arial;
+    font-size: 9pt;
+    empty-cells: show;
+    margin-top: 0;
+    margin-left: 0;
+}
+.input-style4{
+    border:1px solid #999999;
+    font-family: Arial;
+    font-size: 8pt;
+    width: 30px !important;
+    height:22px !important;
+}
+.table-style2 {
+    font-family: Arial;
+    font-size: 9pt;
+    empty-cells: show;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.body {
+	background-color: #D4D0C8;
+}
+.m_fieldset {
+	padding: 0,10,5,10;
+	text-align: center;
+	width: 150px;
+}
+.m_legend {
+	font-family: Tahoma;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+.m_frameborder {
+	border-left: 2px inset #D4D0C8;
+	border-top: 2px inset #D4D0C8;
+	border-right: 2px inset #FFFFFF;
+	border-bottom: 2px inset #FFFFFF;
+	height: 19px;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	text-align: right;
+	font-family: "Tahoma";
+	font-size: 10px;
+}
+.m_arrow {
+	width: 16px;
+	height: 8px;
+	font-family: "Webdings";
+	font-size: 7px;
+	line-height: 2px;
+	padding-left: 2px;
+	cursor: default;
+}
+.m_input {
+	width: 18px;
+	height: 14px;
+	border: 0px solid black;
+	font-family: "Tahoma";
+	font-size: 9px;
+	text-align: right;
+	ime-mode:disabled;
+}
+.c_fieldset {
+	padding: 0,10,5,10;
+	text-align: center;
+	width: 180px;
+}
+.c_legend {
+	font-family: Tahoma;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+.c_frameborder {
+	border-left: 2px inset #D4D0C8;
+	border-top: 2px inset #D4D0C8;
+	border-right: 2px inset #FFFFFF;
+	border-bottom: 2px inset #FFFFFF;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	font-family: "Tahoma";
+	font-size: 10px;
+	width:160px;
+	height:120px;
+}
+.c_frameborder td {
+	width: 23px;
+	height: 16px;
+	font-family: "Tahoma";
+	font-size: 11px;
+	text-align: center;
+	cursor: default;
+}
+.c_frameborder .selected {
+	background-color:#0A246A;
+	width:12px;
+	height:12px;
+	color:white;
+}
+.c_frameborder span {
+	width:12px;
+	height:12px;
+}
+.c_arrow {
+	width: 16px;
+	height: 8px;
+	font-family: "Webdings";
+	font-size: 7px;
+	line-height: 2px;
+	padding-left: 2px;
+	cursor: default;
+}
+.c_year {
+	font-family: "Tahoma";
+	font-size: 11px;
+	cursor: default;
+	width:55px;
+	height:19px;
+}
+.c_month {
+	width:75px;
+	height:20px;
+	font:11px "Tahoma";
+}
+.c_dateHead {
+	background-color:#808080;
+	color:#D4D0C8;
+}
+.content {
+
+	font-family: arial,helvetica,sans-serif;
+
+	color: #666666;
+
+	font-size: 11px;
+	width: 100%;
+}
+.tableheader {
+	font-family: arial,helvetica,sans-serif;
+	color: #006600;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: E5F6FA;
+
+}

@@ -1,0 +1,17 @@
+<html>
+<script language="JavaScript">
+    if(parent.frames.length>0)
+       parent.document.all.main.style.height="600";
+</script>
+<head>
+
+<title>Manage ringtone categories</title>
+</head>
+ <frameset rows="90,*" border="0" bordercolor="#000000">
+    <frame src="ringUploadTitle.jsp" name="libTitle" >
+    <frameset cols="172,*">
+      <frame src="ringUploadTree.jsp" name="ringUploadTree" noresize scrolling="auto">
+      <frame src="ringUpload.jsp" name="ringUpload" noresize scrolling="auto">
+    </frameset>
+</frameset>
+</html>

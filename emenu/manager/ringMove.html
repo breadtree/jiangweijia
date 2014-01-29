@@ -1,0 +1,21 @@
+<html>
+<head>
+
+<title>Operator rights assignment</title>
+</head>
+<script>
+if(parent.frames.length>0){
+		parent.document.all.main.style.height=700;
+		}
+</script>
+<frameset rows="90,*" border="0" bordercolor="#000000" height="800">
+    <frame src="ringMoveTitle.jsp" name="libTitle" >
+    <frameset cols="182,*" >
+       <frameset rows="300,*" >
+          <frame src="ringMoveTree1.jsp" name="ringMoveTree1" noresize scrolling="auto">
+          <frame src="ringMoveTree2.jsp" name="ringMoveTree2" noresize scrolling="auto">
+       </frameset>
+       <frame src="ringMove.jsp" name="ringMove" noresize scrolling="auto">
+    </frameset>
+</frameset>
+</html>

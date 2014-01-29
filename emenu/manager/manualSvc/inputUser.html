@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Please enter the subscriber unmber</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<SCRIPT language="JavaScript" src="../../pubfun/JsFun.js"> </SCRIPT>
+</head>
+
+</head>
+<body  leftmargin="12" align="center">
+<table  width="280" height="95" border="0">
+  <tr>
+    <td width="100%" align="center" height="69" valign="middle">
+    <div id="hintContent" >
+    
+<form name="inputForm" method="post" action="">
+<table border="0" align="center" height="100" width="300" class="table-style2" >
+  <tr valign="center">
+          <td align="right">Subscriber number:</td>
+          <td ><input type="text" name="craccount" value="" maxlength="20" onkeypress='checkReturnKey()'  ></td>
+        </tr>
+</table>
+</form>     
+
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" align="center" height="16" align="center">
+                  <input type="button" onclick="yes();"   value="OK" style="width:70px"/>
+                  <input type="button" onclick="no();"  value="Cancel"  style="width:70px" /></td>
+  </tr>
+</table>
+</body>
+</html>
+<SCRIPT LANGUAGE="JavaScript" >
+function yes(){
+  var value = document.inputForm.craccount.value;
+
+  window.returnValue = value;
+  window.close();
+}
+function no(){
+  window.returnValue = "false";
+  window.close();
+}
+function  checkReturnKey()
+{
+  var keyCode = event.keyCode;
+  if ((keyCode >=48 && keyCode <=57))
+  {
+  	return true;
+  }
+  else
+  {
+  	window.event.returnValue = false;
+  	return false;
+  }
+}
+</SCRIPT>

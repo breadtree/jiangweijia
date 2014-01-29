@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdu>
+<!--铃声ID长度,长度由参数表第34个字段决定-->
+<typedef name="RINGID" length="ognl:@UserViewHelper@getRingIdLen()" type="string" />
+<typedef name="RINGID1" length="20" type="string" />
+<!--电话号码长度-->
+<typedef name="PHONE" length="20" type="string" />
+<!--SP代码字节长度-->
+<typedef name="SPCODE" length="20" type="string" />
+<!--群组索引长度-->
+<typedef name="GROUPINDEX" length="5" type="number" />
+<!--密码长度-->
+<typedef name="CARDPASS" length="8" type="string" />
+<!--用户类型（等级）长度-->
+<typedef name="USERTYPE" length="2" type="number" />
+<!--文件名长度-->
+<typedef name="FILENAME" length="40" type="string" />
+<!--铃声类型（所有权）长度-->
+<typedef name="RINGTYPE" length="2" type="number" />
+<!--文件路径长度-->
+<typedef name="PATH" length="100" type="string" />
+<!--FTP地址长度-->
+<typedef name="FTPADDR" length="15" type="string" />
+<!--铃音价格长度-->
+<typedef name="PRICE" length="9" type="number" />
+<!--保留字段长度-->
+<typedef name="LEAVE" length="10" type="string" />
+<!--铃音计数长度-->
+<typedef name="COUNT" length="10" type="number" />
+<!--铃音有效期长度-->
+<typedef name="EXPIREDATE" length="20" type="string" />
+<!--铃音名称拼音长度-->
+<typedef name="RINGNAMEE" length="40" type="string" />
+<!--FTP用户名长度-->
+<typedef name="FTPUSER" length="20" type="string" />
+<!--FTP密码长度-->
+<typedef name="FTPPWD" length="20" type="string" />
+<!--时间段铃音的起止时间长度-->
+<typedef name="HHMMSS" length="6" type="string" />
+<!--时间段铃音的起止时间长度-->
+<typedef name="HH_MM_SS" length="8" type="string" />
+<!--日期长度-->
+<typedef name="DATETIME" length="10" type="string" />
+<!--纪念日时间段名称长度-->
+<typedef name="DATETIMENAME" length="20" type="string" />
+<!--IP地址长度-->
+<typedef name="IP" length="20" type="string" />
+<!--赠送铃音留言长度-->
+<typedef name="LEAVEWORD" length="100" type="string" />
+<!--集团帐号长度-->
+<typedef name="GROUPACCOUNT" length="20" type="string" />
+<!--销户原因长度-->
+<typedef name="CANCELACCOUNT" length="40" type="string" />
+<!--CRBTID-->
+<typedef name="CRBTID" length="4" type="string" />
+<!--上传指定铃音ID的长度-->
+<typedef name="NEW_RINGID" length="20" type="string" />
+<!--用户有效期长度-->
+<typedef name="USERVALIDDAY" length="4" type="number" />
+<!--sample-->
+<pduitem opcode="01010101" desc="开户请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="craccount" />
+     <item name="cardpass" type="CARDPASS" binding="cardpass" />
+     <item name="level" type="USERTYPE" binding="level"/>
+     <item name="opmode" type="string" length="1" value="1" />
+     <item name="ipaddr" type="IP" binding="ognl:$request.getRemoteAddr()" />
+     <item name="userringtype" type="string" length="1" binding="userringtype" />
+     <item name="renttype" type="string" length="4"  binding="renttype" value="0000"/>
+  </request>
+</pduitem>
+
+<pduitem opcode="01010942" desc="铃音复制" >
+  <request>
+    <item name="craccount" type="PHONE" binding="usernumber" />
+    <item name="receivenum" type="PHONE" binding="copiedusernumber" />
+    <item name="crid" type="RINGID" binding="ringid"/>
+    <item name="opmode" type="string" length="1" value="1" />
+    <item name="ipaddr" type="IP" binding="ognl:request.getRemoteAddr()" />
+     <item name="renttype" type="number" length="2" binding="renttype" value="00" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010516" desc="集团铃音定购" >
+  <request>
+    <item name="craccount" type="PHONE"  binding="usernumber" />
+    <item name="crid" type="RINGID1" binding="ringid"/>
+    <item name="ret1" type="string" length="10" value=" " />
+    <item name="srcFlag" type="string" length="1" value=" " />
+    <item name="srcIpaddr" type="string" length="20" binding="ognl:request.getRemoteAddr()" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020101" desc="开户应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010102" desc="销户请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="craccount" />
+    <item name="passwd" type="CARDPASS" binding="passwd" />
+    <item name="opmode" type="string" length="1" value="1" binding="opmode" />
+    <item name="ipaddr" type="IP" binding="ipaddr"/>
+    <item name="reason" type="CANCELACCOUNT" binding="reason" />
+    <item name="userringtype" type="string" length="1" binding="userringtype" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020102" desc="销户应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010201" desc="增加电话号码请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="craccount" />
+    <item name="phone" type="PHONE" binding="phone" />
+    <item name="crid" type="RINGID" binding="crid" />
+    <item name="groupid" type="GROUP" binding="groupid" />
+    <item name="phonelabel" type="PHONELABEL" binding="phonelabel" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020201" desc="增加电话号码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010202" desc="删除电话号码请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="craccount" />
+    <item name="phone" type="PHONE" binding="phone" />
+    <item name="ret1" type="LEAVE" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020202" desc="删除电话号码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010203" desc="删除个人铃音请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="usernumber" />
+    <item name="crid" type="RINGID" binding="ringid" />
+    <item name="ret1" type="LEAVE" value="" />
+    <item name="opmode" type="string" length="1" value="1"/>
+    <item name="ipaddr" type="IP" binding="ognl:request.getRemoteAddr()" />
+    <item name="ringidtype" type="number" length="4" binding="ringidtype" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020203" desc="删除个人铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010960" desc="登陆时到可服系统人证" >
+  <request>
+    <item name="test" type="string" length="4" value="0001" />
+    <item name="usernumber" type="string" length="24" binding="usernumber" />
+    <item name="password" type="string" length="10" binding="password" />
+    <item name="ret1" type="string" length="20" value="" />
+    <item name="ret2" type="string" length="20" value="" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010204" desc="修改密码请求" >
+  <request>
+     <item name="usernumber" type="PHONE" binding="usernumber" />
+     <item name="oldpwd" type="CARDPASS" binding="oldpwd" />
+     <item name="newpwd" type="CARDPASS" binding="newpwd" />
+     <item name="ret1" type="LEAVE" value="" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020204" desc="修改密码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010301" desc="个人铃音库查询请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020301" desc="个人铃音库查询应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010302" desc="按铃音查询电话号码请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020302" desc="按铃音查询电话号码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010303" desc="按电话号码查询铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020303" desc="按电话号码查询铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010947" desc="用户铃音设置请求" >
+  <request>
+      <item name="craccount" value="" type="PHONE" binding="callnum" />
+      <item name="ringid" type="RINGID1" binding="ringid"/>
+      <item name="callingnum" value="" type="PHONE" binding="callingnum"/>
+      <item name="starttime" type="string" length="8" binding="starttime" value="00:00:00"/>
+      <item name="endtime" value="23:59:59" type="string" length="8" binding="endtime"/>
+      <item name="description" value="" type="string" length="40" binding="timedecrip" />
+      <item name="startdate" value="2000.01.01" type="string" length="10" binding="startdate"/>
+      <item name="enddate" value="2999.12.31" type="string" length="10" binding="enddate" />
+      <item name="startweek" type="string" length="2" value="01" binding="startweek"/>
+      <item name="endweek" type="string" length="2" value="07" binding="endweek"/>
+      <item name="startday" type="string" length="2" value="01" binding="startmonthday"/>
+      <item name="endday" type="string" length="2" value="31"  binding="endmonthday"/>
+      <item name="callingtype" type="string" length="4" binding="callingtype" />
+      <item name="settype" type="string" length="2" binding="settype" value="0"/>
+      <item name="opertype" type="string" length="2" binding="opertype" value="0"/>
+      <item name="ringidtype" type="string" length="2" binding="ringidtype" />
+      <item name="setno" value="" type="string" length="10"  />
+      <item name="setpri" value="" type="string" length="10"/>
+      <item name="startmonday" value="01.01" type="string" length="5" binding="startmonday"/>
+      <item name="endmonday" value="12.31" type="string" length="5" binding="endmonday"/>
+      <item name="playstarttime" value="000" type="number" length="3" binding="starttime1"/>
+      <item name="playendtime" value="000" type="number" length="3" binding="endtime1"/>
+  </request>
+</pduitem>
+
+
+<pduitem opcode="01020401" desc="设置个人默认回铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010509" desc="订购个人套餐" >
+  <request>
+<item name="craccount" value="" type="PHONE" binding="ognl: $request.getSession().getAttribute('USER_NUMBER')"/>
+<item name="discountid" type="string" length="20" binding="discountid"/>
+<item name="opertype" value="1" type="string" length="1" binding="opertype"/>
+<item name="srcFlag" type="string" length="1" value=" "/>
+<item name="srcIpaddr" type="string" length="20" binding="srcIpaddr" />
+<item name="operator" type="string" length="20" binding="ognl: $request.getSession().getAttribute('USER_NUMBER')" />
+<item name="comment" value=" " type="string" length="50" />
+ </request>
+</pduitem>
+
+<pduitem opcode="01010204" desc="修改密码" >
+  <request>
+<item name="craccount" value="" type="PHONE" binding="usernumber"/>
+<item name="oldpwd" type="CARDPASS" binding="oldpwd"/>
+<item name="newpwd" type="CARDPASS" binding="newpwd"/>
+<item name="ret1" type="string" length="10" value=""/>
+ </request>
+</pduitem>
+
+<pduitem opcode="01010518" desc="退出集团" >
+  <request>
+<item name="craccount" type="PHONE" binding="usernumber"/>
+<item name="groupid" type="string" length="20" binding="groupid"/>
+<item name="strreserve1" type="string" length="20" value="1"/>
+<item name="strreserve2" type="string" length="20" binding="ipaddr"/>
+ </request>
+ <!--<errors>
+  <item code="9319" desc="用户不能退出集团" shown="true"/>
+  <item code="9318" desc="该用户正在预加入或预退出集团" shown="true"/>
+  </errors>-->
+</pduitem>
+
+<pduitem opcode="01020401" desc="设置个人默认回铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+<pduitem opcode="01010402" desc="设置个人遇忙提示音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020402" desc="设置个人遇忙提示音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010403" desc="设置个人关机（不在服务区）提示音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020403" desc="设置个人关机（不在服务区）提示音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010501" desc="铃音文件上传请求" >
+  <request>
+<item name="craccount" value="" type="PHONE" binding="usernumber" />
+<item name="own" type="int" length="2" binding="ringtype"/>
+<item name="filename" value="" type="string" length="40" binding="ringfile"/>
+<item name="path" type="string" length="100" value="/tmp" />
+<item name="ftpaddr" type="string" length="15" binding="ftpaddr" />
+<item name="price" value="" type="int" length="9" binding="price" />
+<item name="ringname" type="string" length="40" binding="ringname" />
+<item name="auther" type="string" length="40" binding="ringauthor" />
+<item name="supplier" type="string" length="40" binding="ringsource" />
+<item name="ftpuser" type="string" length="20" binding="ftpuser" />
+<item name="ftppwd" type="string" length="20" binding="ftppwd" />
+<item name="expiredate" type="string" length="20" value="" />
+<item name="authnamee" type="string" length="40" value="" />
+<item name="opmode" type="string" length="1" value="1"/>
+<item name="ipaddr" type="string" length="20"  binding = "ipaddr" />
+<item name="ringid" type="RINGID"  binding="ringid"/>
+<item name="uservalidday" value="0" type="int" length="4"  />
+<item name="isfreewill" value="00" type="int" length="2"  />
+  </request>
+  <response>
+    <item name="crid" type="RINGID"  binding="crid" />
+  </response>
+</pduitem>
+
+<pduitem opcode="01020501" desc="铃音文件上传应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010502" desc="铃音文件下传请求" >
+  <request>
+     <item name="craccount" type="PHONE"  binding="craccount" />
+     <item name="ringid" type="RINGID" binding="ringid"/>
+     <item name="ftpaddr" type="FTPADDR" binding="ftpaddr"/>
+     <item name="path" type="PATH"  binding="path" />
+     <item name="ret1" type="LEAVE"  binding="ret1" value="" />
+     <item name="ftpuser" type="string" length="20"  binding="ftpuser" value="" />
+     <item name="ftppwd" type="string" length="20"  binding="ftppwd" value="" />
+  </request>
+  <response>
+    <item name="filename" type="FILENAME"  binding="filename" />
+    <item name="own" type="USERTYPE"  binding="own" />
+  </response>
+</pduitem>
+
+<pduitem opcode="01020502" desc="铃音文件下传应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010601" desc="核查命令请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020601" desc="核查命令应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010701" desc="恢复/暂停业务请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="usernumber"/>
+     <item name="passwd" type="CARDPASS" binding="passwd" />
+     <item name="op" type="int" length="1" binding="op" />
+     <item name="opmode" type="string" length="1" binding="opmode" />
+     <item name="ipaddr" type="IP" binding="ognl: $request.getRemoteAddr()" />
+     <item name="userringtype" type="string" length="1" binding="userringtype" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020701" desc="恢复/暂停业务应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010801" desc="增加/删除黑名单请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="usernumber" />
+     <item name="phone" type="PHONE" binding="blackphone" />
+     <item name="op" type="int" length="1" binding="op" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020801" desc="增加/删除黑名单应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010802" desc="设置黑名单提示音请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="usernumber" />
+     <item name="crid" type="RINGID" length="10" binding="toneid" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020802" desc="设置黑名单提示音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010901" desc="系统铃音分类查询请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020901" desc="系统铃音分类查询应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010902" desc="获取用户密码请求" >
+  <request>
+     <item name="usernumber" type="PHONE" binding="usernumber" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020902" desc="获取用户密码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010963" desc="登陆时到客服系统人证" >
+  <request>
+     <item name="craccount" type="PHONE" binding="craccount" />
+     <item name="recvnumber" type="PHONE" binding="recvnumber" />
+     <item name="opmode" type="string" length="1" value="1"/>
+     <item name="ipaddr" type="IP" binding="ognl:$request.getRemoteAddr()"/>
+     <item name="userringtype" type="string" length="1" value="0"/>
+     <item name="presenttime" type="string" length="10" value="0"/>
+     <item name="renttype" type="string" length="4" binding="renttype" value="0000" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010903" desc="用户开户鉴权请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="usernumber" />
+    <item name="userringtype" value="0" type="string" length="1" binding="userringtype" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010904" desc="批量修改主叫号码铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010905" desc="定购系统铃音操作请求" >
+  <request>
+     <item name="usernumber" type="PHONE" binding="ognl: $request.getSession().getAttribute('USER_NUMBER')" />
+     <item name="ringid" type="RINGID" binding="ringid" />
+     <item name="ret1" type="string" length="10" value="" binding="ret1" />
+     <item name="opmode" type="string" length="1" value="1"/>
+     <item name="ipaddr" type="IP"  binding="ognl: $request.getRemoteAddr()" />
+     <item name="extra" value="#" type="string" length="4"  />
+     <item name="ringidtype" type="number" length="4" binding="ringidtype" />
+      <item name="renttype" type="number" length="2" binding="renttype" value="00" />
+  </request>
+</pduitem>
+
+<pduitem opcode="1010942" desc="铃音复制请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="craccount" />
+     <item name="receivenum" type="PHONE" binding="usernumber" />
+     <item name="ringid" type="RINGID" binding="ringid" />
+     <!--需要修改页面传值-->
+     <item name="opmode" type="string" length="1" binding="opmode" />
+     <item name="ipaddr" type="IP" binding="ognl: request.getRemoteAddr()" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020905" desc="定购/复制铃音操作应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010906" desc="查询系统铃音分类库请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020906" desc="查询系统铃音分类库应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020907" desc="查询个人设置的默认铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020907" desc="查询个人设置的默认铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010908" desc="查询个人黑名单请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020908" desc="查询个人黑名单应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010909" desc="用户类别查询请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020909" desc="用户类别查询应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010910" desc="用户当前已设置电话号码查询请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020910" desc="用户当前已设置电话号码查询应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010911" desc="查询用户当前状态请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020911" desc="查询用户当前状态应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010912" desc="修改铃音信息请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020912" desc="修改铃音信息应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010913" desc="查询主叫号码组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020913" desc="查询主叫号码组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010914" desc="创建主叫号码组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020914" desc="创建主叫号码组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010915" desc="修改主叫号码组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020915" desc="修改主叫号码组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010916" desc="删除主叫号码组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020916" desc="删除主叫号码组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010918" desc="删除主叫号码组成员请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020918" desc="删除主叫号码组成员应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010919" desc="修改主叫号码信息请求" >
+  <request>
+    <item name="craccount" type="PHONE" binding="craccount" />
+    <item name="groupid" type="GROUP" binding="groupid" />
+    <item name="phone" type="PHONE" binding="phone" />
+    <item name="phonelabel" type="PHONELABEL" binding="phonelabel" />
+    <item name="crid" type="RINGID" binding="crid" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020919" desc="修改主叫号码信息应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010920" desc="查询铃音组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020920" desc="查询铃音组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010921" desc="创建铃音组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020921" desc="创建铃音组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010922" desc="删除铃音组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020922" desc="删除铃音组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010923" desc="修改铃音组请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020923" desc="修改铃音组应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010924" desc="增加铃音组成员请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020924" desc="增加铃音组成员应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010925" desc="删除铃音组成员请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020925" desc="删除铃音组成员应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010926" desc="铃音赠送请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="ognl: $request.getSession().getAttribute('USER_NUMBER')" />
+     <item name="receiver" type="PHONE" binding="receiver" />
+     <item name="ringid" type="RINGID" binding="ringid" />
+     <!--item name="ret1" type="string" length="10" value="" binding="ret1" /-->
+     <item name="opmode" type="string" length="1" value="1" />
+     <item name="ipaddr" type="IP" binding="ognl: $request.getRemoteAddr()" />
+     <!--item name="extra" value="#" type="string" length="4"  /-->
+     <item name="leaveword" value="" type="LEAVEWORD" binding="leaveword" />
+     <item name="ringidtype" type="number" length="4" binding="ringidtype" value="0000"/>
+     <item name="renttype" type="number" length="2" binding="renttype" value="00" />
+  </request>
+</pduitem>
+<pduitem opcode="01010949" desc="赠送系统大礼包请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="ognl: $request.getSession().getAttribute('USER_NUMBER')" />
+     <item name="receiver" type="PHONE" binding="receiver" />
+     <item name="ringid" type="RINGID1" binding="ringid" />
+<!--item name="ret1" type="string" length="10" value="" binding="ret1" /-->
+     <item name="opmode" type="string" length="1" value="1" />
+     <item name="ipaddr" type="IP" binding="ognl: $request.getRemoteAddr()" />
+<!--item name="extra" value="#" type="string" length="4"  /-->
+     <item name="leaveword" value="" type="LEAVEWORD" binding="leaveword" />
+     <item name="ringidtype" type="number" length="4" binding="ringidtype" />
+  </request>
+</pduitem>
+<pduitem opcode="01020926" desc="铃音赠送应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010993" desc="批量上传铃音请求" >
+  <request>
+    <item name="spcode" type="SPCODE" binding="spcode" />
+    <item name="craccount" value="" type="PHONE" binding="usernumber" />
+    <item name="own" type="int" length="2" binding="ringtype"/>
+    <item name="filename" value="" type="string" length="40" binding="ringfile"/>
+    <item name="path" type="string" length="100" value="/tmp" />
+    <item name="ftpaddr" type="string" length="15" binding="ftpaddr" />
+    <item name="price" value="" type="int" length="9" binding="price" />
+    <item name="ringname" type="string" length="40" binding="ringname" />
+    <item name="auther" value="" type="string" length="40" binding="ringauthor" />
+    <item name="supplier" type="string" length="40" binding="ringsource" />
+    <item name="ftpuser" type="string" length="20" binding="ftpuser" />
+    <item name="ftppwd" type="string" length="20" binding="ftppwd" />
+    <item name="expiredate" type="string" length="20" value="" />
+    <item name="authnamee" type="string" length="40" value="" binding="authnamee"/>
+    <item name="opmode" type="string" length="1" value="1"/>
+    <item name="ipaddr" type="string" length="20"  binding = "ipaddr" />
+    <item name="ringid" type="string" length="20"  binding="ringid"/>
+    <item name="uservalidday" value="0" type="int" length="4"  />
+    <item name="isfreewill" value="00" type="int" length="2"  />
+    <item name="mediatype"  type="string" length="10" binding="mediatype" />
+    <item name="filetype"  type="string" length="10" binding="filetype" />
+    <item name="preflag" type="string" length="1" binding="preflag"/>
+    <item name="prefilename" value="" type="string" length="40" binding="prefilename"/>
+  </request>
+</pduitem>
+
+<pduitem opcode="01020993" desc="批量上传铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010994" desc="试听待审核铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020994" desc="试听待审核铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010995" desc="铃音审核通过请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020995" desc="铃音审核通过应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010996" desc="申请动态密码请求" >
+  <request>
+     <item name="craccount" type="PHONE" binding="usernumber" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020996" desc="申请动态密码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010932" desc="设置时间段请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020932" desc="设置时间段应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010933" desc="设置纪念日请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020933" desc="设置纪念日应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010934" desc="置换系统铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020934" desc="置换系统铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010935" desc="修改时间段铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020935" desc="修改时间段铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010936" desc="修改纪念日铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020936" desc="修改纪念日铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010937" desc="获取鉴权码请求" >
+  <request>
+    <item name="unknow" type="SPCODE" binding="" />
+    <item name="craccount" type="PHONE" binding="userNumber" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020937" desc="获取鉴权码应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010943" desc="号码组设置时间段请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020943" desc="号码组设置时间段应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010944" desc="号码组修改时间段铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020944" desc="号码组修改时间段铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010945" desc="号码组设置纪念日请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020945" desc="号码组设置纪念日应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010946" desc="号码组修改纪念日铃音请求" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020946" desc="号码组修改纪念日铃音应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010948" desc="集团彩铃开户请求" >
+  <request>
+    <item name="usernumber" type="PHONE" binding="craccount" />
+    <item name="groupid" type="string" length="20" binding="groupid" />
+    <!--需要修改页面传值-->
+    <item name="opmode" type="string" length="20" binding="opmode" />
+    <item name="ipaddr" type="string" length="20" binding="operName" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01020948" desc="集团彩铃开户应答" >
+  <request>
+     <item name="test" type="int" length="20" binding="name" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010405" desc="WEB集团设置铃音请求" >
+  <request>
+    <item name="crbtid" type="number" length="4" binding="crbtid" />
+    <item name="unknow" type="string" length="20" binding="" />
+    <item name="unknow" type="string" length="20" binding="" />
+  </request>
+</pduitem>
+
+<pduitem opcode="01010962" desc="WEB集团设置铃音应答" >
+  <request>
+    <item name="craccount" type="PHONE" binding="groupid" />
+    <item name="crid" type="RINGID" binding="ringID" />
+    <item name="callingnum" type="PHONE" binding="callingnum" />
+    <item name="starttime" type="HH_MM_SS" binding="startTime" />
+    <item name="endtime" type="HH_MM_SS" binding="endTime" />
+    <item name="description" type="string" length="40" binding="timeDecrip" />
+    <!--需要修改页面传值-->
+    <item name="startdate" type="DATETIME" binding="startdate" />
+    <item name="enddate" type="DATETIME" binding="enddate" />
+    <item name="startweek" type="string" length="2" binding="startweek" />
+    <item name="endweek" type="string" length="2" binding="endweek" />
+    <item name="startday" type="string" length="2" binding="startday" />
+    <item name="endday" type="string" length="2" binding="endday" />
+    <item name="callingtype" type="string" length="4" binding="callingtype" />
+    <item name="settype" type="string" length="2" binding="settype" />
+    <item name="opertype" type="string" length="2" binding="opertype" />
+    <item name="ringidtype" type="string" length="2" binding="ringidtype" />
+    <item name="setno" type="string" length="10" binding="setno" />
+    <item name="setpri" type="string" length="10" binding="setpri" />
+  </request>
+</pduitem>
+<pduitem opcode="01010708" desc="changeUsertype" >
+  <request>
+    <item name="craccount" type="PHONE" binding="usernumber" />
+    <item name="colorRingtype" type="string" length="1" binding="colorRingtype" />
+    <item name="renttype" type="string" binding="renttype" length="4" value="0000"/>
+    <item name="oldrenttype" type="string" binding="oldrenttype" length="4" value="0000" />
+  </request>
+</pduitem>
+
+<pduitem opcode="10108101" desc="Create group request" >
+  <request>
+    <item name="grpCode" type="string" length="12" binding="grpCode" />
+    <item name="grpName" type="string" length="41" binding="grpName" />
+    <item name="grpPayNum" type="string" length="21" binding="grpPayNum" />
+    <item name="maxring" type="string" length="6" binding="maxring" />
+    <item name="chargeFlag" type="string" length="1" binding="chargeFlag" />
+    <item name="memRent" type="string" length="11" binding="memRent" />
+    <item name="extraFee" type="string" length="11" binding="extraFee" />
+    <item name="maxMem" type="string" length="11" binding="maxMem" />
+  </request>
+</pduitem>
+<pduitem opcode="10108102" desc="Delete group request" >
+  <request>
+    <item name="grpCode" type="string" length="12" binding="grpCode" />
+  </request>
+</pduitem>
+<pduitem opcode="10108103" desc="Modify group request" >
+  <request>
+    <item name="grpCode" type="string" length="12" binding="grpCode" />
+    <item name="grpNameFlag" type="string" length="1" binding="grpNameFlag" />
+    <item name="grpName" type="string" length="41" binding="grpName" />
+    <item name="grpPayNumFlag" type="string" length="1" binding="grpPayNumFlag" />
+    <item name="grpPayNum" type="string" length="21" binding="grpPayNum" />
+    <item name="maxringFlag" type="string" length="1" binding="maxringFlag" />
+    <item name="maxring" type="string" length="6" binding="maxring" />
+    <item name="chargeFlagFlag" type="string" length="1" binding="chargeFlagFlag" />
+    <item name="chargeFlag" type="string" length="1" binding="chargeFlag" />
+    <item name="memRentFlag" type="string" length="1" binding="memRentFlag" />
+    <item name="memRent" type="string" length="11" binding="memRent" />
+    <item name="extraFeeFlag" type="string" length="1" binding="extraFeeFlag" />
+    <item name="extraFee" type="string" length="11" binding="extraFee" />
+    <item name="maxMemFlag" type="string" length="1" binding="maxMemFlag" />
+    <item name="maxMem" type="string" length="11" binding="maxMem" />
+  </request>
+</pduitem>
+
+<pduitem opcode="10108104" desc="Add group members request" >
+  <request>
+    <item name="msisdn" type="string" length="1800" binding="msisdn" />
+    <item name="grpCode" type="string" length="12" binding="grpCode" />
+  </request>
+  <response>
+    <item name="result" type="string" length="1800" />
+  </response> 
+</pduitem>
+
+<pduitem opcode="10108105" desc="Delete group members request" >
+  <request>
+    <item name="msisdn" type="string" length="1800" binding="msisdn" />
+    <item name="grpCode" type="string" length="12" binding="grpCode" />
+  </request>
+  <response>
+    <item name="result" type="string" length="1800" />
+  </response>
+</pduitem>
+
+<errors>
+  <item code="1111" desc="wrong number(from pdu)" shown="true" exception="false"  />
+  <item code="9019" desc="This calling tune is in user's current playlist." shown="true" exception="true"  />
+</errors>
+</pdu>

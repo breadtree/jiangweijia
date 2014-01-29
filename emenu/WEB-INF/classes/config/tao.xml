@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tao>
+<metadata  name="metadata_callinggroup" type="table" from="default" querydao="user" operatedao="user" >
+	<object>s50callinggroup</object>
+</metadata>
+
+<!-- 用户铃音-->
+<metadata name="query_userringlib0"  type="query" from="default" querydao="user" operatedao="default" >
+<object>select a.*,b.ringspell from $DBALIAS.s50userring00 a LEFT OUTER JOIN $DBALIAS.s50pernalring00 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib0"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1 ,b.alias2 from $DBALIAS.s50userring00 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+
+<metadata name="query_userringlib1"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring01 a LEFT OUTER JOIN $DBALIAS.s50pernalring01 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+
+<metadata name="ar_query_userringlib1"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring01 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+
+<metadata name="query_userringlib2"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring02 a LEFT OUTER JOIN $DBALIAS.s50pernalring02 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib2"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring02 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+
+<metadata name="query_userringlib3"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring03 a LEFT OUTER JOIN $DBALIAS.s50pernalring03 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib3"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring03 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib4"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring04 a LEFT OUTER JOIN $DBALIAS.s50pernalring04 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib4"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring04 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib5"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring05 a LEFT OUTER JOIN $DBALIAS.s50pernalring05 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib5"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring05 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib6"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring06 a LEFT OUTER JOIN $DBALIAS.s50pernalring06 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib6"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring06 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib7"  type="query" from="default" querydao="user" operatedao="default" >
+<object>select a.*,b.ringspell from $DBALIAS.s50userring07 a LEFT OUTER JOIN $DBALIAS.s50pernalring07 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib7"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring07 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib8"  type="query" from="default" querydao="user" operatedao="default" >
+<object>select a.*,b.ringspell from $DBALIAS.s50userring08 a LEFT OUTER JOIN $DBALIAS.s50pernalring08 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib8"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring08 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+<metadata name="query_userringlib9"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.ringspell from $DBALIAS.s50userring09 a LEFT OUTER JOIN $DBALIAS.s50pernalring09 b on a.ringid=b.ringid where 1=1</object>
+</metadata>
+<metadata name="ar_query_userringlib9"  type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50userring09 a, $DBALIAS.s50ringadditional b where a.ringid(+)=b.ringid </object>
+</metadata>
+
+<!-- 引导式设置中用查询用户铃音-->
+<metadata name="query_leaduserringlib0"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring00 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib1"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring01 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib2"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring02 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid  and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib3"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring03 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib4"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring04 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib5"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring05 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib6"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring06 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib7"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring07 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib8"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring08 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<metadata name="query_leaduserringlib9"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.ringid,a.ringlabel,b.singgername,a.ringsource,a.validdate,b.buytimes,b.largesstimes,b.ringtype,a.ringfee,b.ringlong
+            from $DBALIAS.s50userring09 a,$DBALIAS.s50ring b
+             where a.ringid = b.ringid and b.status = 0 </object>
+</metadata>
+<!--用户铃音组库  -->
+<metadata name="userringgrplib0"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp00 a</object>
+</metadata>
+<metadata name="userringgrplib1"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp01 a</object>
+</metadata>
+<metadata name="userringgrplib2"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp02 a</object>
+</metadata>
+<metadata name="userringgrplib3"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp03 a</object>
+</metadata>
+<metadata name="userringgrplib4"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp04 a</object>
+</metadata>
+<metadata name="userringgrplib5"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp05 a</object>
+</metadata>
+<metadata name="userringgrplib6"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp06 a</object>
+</metadata>
+<metadata name="userringgrplib7"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp07 a</object>
+</metadata>
+<metadata name="userringgrplib8"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp08 a</object>
+</metadata>
+<metadata name="userringgrplib9"   type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.allindex, a.groupindex, a.ringgroup, a.grouplabel, a.uploadtime, a.ringcnt, a.extragroupid , a.mediatype from $DBALIAS.s50userringgrp09 a</object>
+</metadata>
+<!--音乐盒-->
+<metadata name="musicbox" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringgroup,b.grouplabel,a.ringfee,a.validdate,b.ringcnt,b.cataindex,b.spindex,a.ringgrptype,a.payed from $DBALIAS.s50usersysringgrp a,$DBALIAS.s50sysringgrp b  where a.ringgroup=b.ringgroup</object>
+</metadata>
+
+<metadata name="userinfo" bean="zte.zxyw50.user.domain.UserInfoDO"  type="table" from="default" querydao="user" operatedao="user" >
+	<object>s50userinfo</object>
+</metadata>
+
+<metadata name="activity"  type="table" from="default" querydao="default" operatedao="default" >
+	<object>s50activity</object>
+</metadata>
+
+<!--用户铃音需求-->
+<metadata name="userwantedring"  type="table" from="default" querydao="default" operatedao="user" >
+	<object>s50wantedring</object>
+</metadata>
+
+<!--用户黑名单-->
+<metadata name="blackinfo"  type="table" from="default" querydao="user" operatedao="user" >
+	<object>s50blacknum</object>
+</metadata>
+
+<!--集团铃音 -->
+<metadata name="groupringlib" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype,a.mediatype from
+                    $DBALIAS.s50ring a  where  a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib0" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring00 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib1" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring01 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib2" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring02 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib3" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring03 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib4" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring04 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib5" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring05 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib6" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring06 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib7" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring07 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib8" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring08 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+<metadata name="groupringlib9" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringindex, a.ringid, a.ringlabel,a.ringspell,a.ringauthor,a.ringsource,a.validdate,a.ringtype from
+                    $DBALIAS.s50ring a , $DBALIAS.s50userring09 b where a.ringindex=b.ringindex and a.ringtype=8 and a.subindex>0 and a.status = 0 </object>
+</metadata>
+
+ <metadata name="myfavoritering" type="join" querydao="user" operatedao="default">
+    <object>s50ring,s50userfavor01</object>
+    <field name ="ringindex" mapped="s50ring.ringindex"/>
+    <field name ="ringid" mapped="s50ring.ringid"/>
+    <field name ="ringlabel" mapped="s50ring.ringlabel"/>
+    <field name ="ringfee" mapped="s50ring.ringfee"/>
+    <field name ="uploadtime" mapped="s50ring.uploadtime"/>
+    <field name ="singgername" mapped="s50ring.singgername"/>
+    <field name ="buytimes" mapped="s50ring.buytimes"/>
+    <field name ="largesstimes" mapped="s50ring.largesstimes"/>
+    <field name ="spname" mapped="s50ring.spname"/>
+    <related name="s50userfavor01" condition="s50userfavor01.ringindex=s50ring.ringindex and s50ring.ringtype&lt;=2 and s50ring.subindex&gt;=4 and s50ring.status = 0 "/>
+  </metadata>
+
+<metadata name="usertype"  type="table" from="default" querydao="default" operatedao="default" >
+	<object>s50usertype</object>
+</metadata>
+
+<metadata name="cardinfo"  type="table" from="default" querydao="user" operatedao="user" >
+	<object>s50cardinfo</object>
+</metadata>
+
+<metadata name="s50ring"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50ring</object>
+</metadata>
+<metadata name="s50ringboard"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50ringboard</object>
+</metadata>
+<metadata name="s50singer"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50singer</object>
+</metadata>
+<metadata name="s50catalog"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50catalog</object>
+</metadata>
+
+<metadata name="s50spinf"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50spinf</object>
+</metadata>
+
+<metadata name="s50ringcatalog"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50ringcatalog</object>
+</metadata>
+
+<metadata name="s50sortringorder"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50sortringorder</object>
+</metadata>
+
+<metadata name="s50searchrings" type="query" from="default" querydao="user" operatedao="user">
+	<object>select a.ringindex,a.ringid,a.ringtype,a.subindex,a.ringlabel,a.ringfee,a.singgername,a.singerid,a.buytimes,a.uploadtime,a.mediatype,b.alias1 as ringalias1, b.alias2 as ringalias2,
+   c.alias1 as singeralias1, c.alias2 as singeralias2, c.image,a.restint2 from $DBALIAS.s50ring a, $DBALIAS.s50ringadditional b, $DBALIAS.s50singer c
+   where a.ringid = b.ringid and a.singerid = c.singerid </object>
+</metadata>
+
+<metadata name="s50ringfunc"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50ringfunc</object>
+</metadata>
+
+<metadata name="s50ringadditional"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50ringadditional</object>
+</metadata>
+
+<metadata name="s50product"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50product</object>
+</metadata>
+
+<metadata name="s50productmem"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50productmem</object>
+</metadata>
+
+<metadata name="s50discountinf"  type="table" from="default" querydao="default" operatedao="all" >
+	<object>s50discountinf</object>
+</metadata>
+<metadata name="usercalledtypeinfo"  type="query" from="default" querydao="user" operatedao="user" >
+	<object>select a.usernumber,a.usertype,a.nusertype,b.utlabel,a.ringplaymode,a.ringgrpplaymode from $DBALIAS.s50cardinfo_called a ,$DBALIAS.s50usertype b where a.usertype=b.usertype and b.subservice=1</object>
+</metadata>
+
+<metadata name="usercallingtypeinfo"  type="query" from="default" querydao="user" operatedao="user" >
+	<object>select a.usernumber,a.usertype,a.nusertype,b.utlabel,a.ringplaymode,a.ringgrpplaymode from $DBALIAS.s50cardinfo_calling a ,$DBALIAS.s50usertype b where a.usertype=b.usertype and b.subservice=2</object>
+</metadata>
+
+<metadata name="userimagetypeinfo"  type="query" from="default" querydao="user" operatedao="user" >
+	<object>select a.usernumber,a.usertype,a.nusertype,b.utlabel,a.ringplaymode,a.ringgrpplaymode from $DBALIAS.s50cardinfo_image a ,$DBALIAS.s50usertype b where a.usertype=b.usertype and b.subservice=16</object>
+</metadata>
+
+<datasource type="custom" cacheable="false" >
+	<name>ds_ringlib</name>
+	<object>zte.zxyw50.user.util.DataSourcePersonRingLib</object>
+</datasource>
+
+<datasource type="custom" cacheable="false" >
+	<name>ds_ringingroup</name>
+	<object>zte.zxyw50.user.util.DataSourceRingInGroup</object>
+</datasource>
+
+<datasource type="custom" cacheable="false" >
+	<name>ds_ringnotingroup</name>
+	<object>zte.zxyw50.user.util.DataSourceRingNotInGroup</object>
+</datasource>
+
+<datasource type="custom" cacheable="false" >
+	<name>ds_usertype</name>
+	<object>zte.zxyw50.user.util.DataSourceUserType</object>
+</datasource>
+
+<datasource type="metadata" querydao="user" cacheable="false" >
+	<name>ds_callinggroup</name>
+	<object>metadata_callinggroup</object>
+</datasource>
+
+<datasource type="custom" querydao="user" cacheable="false" >
+	<name>ds_userringlib</name>
+	<object>zte.zxyw50.user.util.DataSourcePersonalSingleRings</object>
+</datasource>
+
+<metadata name="query_callingtimetable0"   type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum00 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable0"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum00 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable1"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum01 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable1"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum01 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable2"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum02 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable2"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum02 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable3"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum03 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable3"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum03 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable4"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum04 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable4"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum04 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable5"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum05 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable5"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum05 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable6" type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum06 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable6"  type="query" from="default" querydao="user" operatedao="user" > 
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum06 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable7" type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum07 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable7"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum07 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable8" type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum08 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable8"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum08 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+<metadata name="query_callingtimetable9" type="query" from="default" querydao="user" operatedao="user" >
+      <object>select * from $DBALIAS.s50timecallingnum09 a</object>
+</metadata>
+<metadata name="ar_query_callingtimetable9"  type="query" from="default" querydao="user" operatedao="user" >
+      <object>select a.*,b.alias1,b.alias2 from $DBALIAS.s50timecallingnum09 a,$DBALIAS.s50ringadditional b where a.ringid=b.ringid </object>
+</metadata>
+
+<metadata name="query_phoneingroup0"  type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem00 </object>
+</metadata>
+
+<metadata name="query_phoneingroup1"  type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem01</object>
+</metadata>
+<metadata name="query_phoneingroup2"  type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem02</object>
+</metadata>
+<metadata name="query_phoneingroup3"  type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem03</object>
+</metadata>
+<metadata name="query_phoneingroup4"   type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem04</object>
+</metadata>
+<metadata name="query_phoneingroup5" type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem05</object>
+</metadata>
+<metadata name="query_phoneingroup6" type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem06</object>
+</metadata>
+<metadata name="query_phoneingroup7" type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem07</object>
+</metadata>
+<metadata name="query_phoneingroup8" type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem08</object>
+</metadata>
+<metadata name="query_phoneingroup9" type="table" from="default" querydao="user" operatedao="default" >
+	<object>s50callinggrpmem09</object>
+</metadata>
+
+<metadata name="useroperinfo"  type="query" from="default" querydao="user" operatedao="user" >
+	<object>select spindex,ringid,ringname,ringfee,opertime,opertype,operdesc,opermode,opersource,usernumber from $DBALIAS.s50spbuyrings01</object>
+</metadata>
+
+<metadata name="userfavorite"  type="query" from="default" querydao="user" operatedao="user" >
+	<object>select a.ringindex, a.ringid,a.ringlabel, a.ringfee, a.uploadtime, b.singgername,c.spname, a.buytimes, a.largesstimes from  $DBALIAS.s50ring a, $DBALIAS.s50singer b ,$DBALIAS.s50spinf c ,$DBALIAS.s50userfavor00 d where d.ringindex=a.ringindex and a.ringtype&lt;2 and a.subindex&gt;4 and a.singerid=b.singerid  and a.spindex = c.spindex and a.status = 0 </object>
+</metadata>
+
+<metadata name="phonegroupinfo"  type="table" from="default" querydao="user" operatedao="user" >
+	<object>s50callinggroup</object>
+</metadata>
+
+<metadata name="userdiscountinfo"  type="query" from="default" querydao="user" operatedao="user" >
+    <object>select a.discountindex,c.rentfee,c.freerings,c.discountid,c.discountname,c.discountdesc,b.spname from $DBALIAS.s50userdiscount a,$DBALIAS.s50spinf b,$DBALIAS.s50discount c</object>
+</metadata>
+
+<metadata name="usergrpinfo"  type="query" from="default" querydao="user" operatedao="user" >
+    <object>select a.usernumber,b.* from $DBALIAS.s50cardinfo_group a,$DBALIAS.s50groupinf b where a.groupindex= b.groupindex</object>
+</metadata>
+<!-- Detailed Music Box for Webservice-->
+<metadata name="detailmusicbox" type="query" from="default" querydao="user" operatedao="default" >
+	<object>select a.ringgroup,b.grouplabel,a.ringfee,b.buytimes,b.description,b.ringcnt,b.validdate,b.largesstimes,b.spindex from $DBALIAS.s50usersysringgrp a,$DBALIAS.s50sysringgrp b  where a.ringgroup=b.ringgroup</object>
+</metadata>
+<metadata name="promotion_info"  type="query" from="default" querydao="default" operatedao="all" >
+	<object>select a.ringid,a.ringlabel,a.ringauthor,a.buytimes,a.largesstimes,a.mediatype,a.filetype,a.validdate,a.uploadtime from $DBALIAS.s50ring a,$DBALIAS.s50discountinf b,$DBALIAS.s50product c,$DBALIAS.s50productmem d where 1=1 </object>
+</metadata>
+<!-- END -->
+</tao>

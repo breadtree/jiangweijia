@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tao>
+<domain context="zte.zxyw50.CRBTContext" className="zte.zxyw50.user.service.UserDomainService">
+     <command name = "changepwd" successedpage="/refreshpage.jsp?op=4" failedpage="/error.jsp" path="/userchangepwd.action" />
+     <command name = "finduserringlib"  successedpage="/tableedit.jsp" failedpage="/error.jsp" path="/callingtimedemo.action" />
+     <command name = "addtimecallingring"  successedpage="/callingtimetable.jsp" failedpage="/error.jsp" path="/callingtimecreatedemo.action" />
+     <command name = "addtimecallingring"  successedpage="/leadring.action" failedpage="/error.jsp" path="/callingtimecreatedemolead.action" />
+     <command name = "modifytimecallingring" successedpage="/callingtimetable.jsp" failedpage="/error.jsp" path="/callingtimemodifydemo.action" />
+     <command name = "modifytimecallingring" successedpage="/leadring.action" failedpage="/error.jsp" path="/callingtimemodifydemolead.action" />
+     <command name = "deletetimecallingring" successedpage="/callingtimetable.jsp" failedpage="/error.jsp" path="/callingtimedeletedemo.action"/>
+     <command name = "deletetimecallingring" successedpage="/leadring.action" failedpage="/error.jsp" path="/callingtimedeletedemolead.action"/>
+     <command name = "setdefaultring" successedpage="/finduserdefaultring.action" failedpage="/error.jsp" path="/setdefaultring.action"/>
+     <command name = "setdefaultring" successedpage="/leadring.action" failedpage="/error.jsp" path="/setdefaultringlead.action"/>
+     <command name = "defaultringfee" successedpage="/setring.jsp" failedpage="/error.jsp" path="/defaultringfee.action"/>
+     <command name = "findringhasused" successedpage="/editring.jsp" failedpage="/error.jsp" path="/findringhasused.action"/>
+     <command name = "delpersonring" successedpage="/initeditring.action" failedpage="/error.jsp" path="/delpersonring.action"/>
+     <command name = "delpersonringother" successedpage="/finduserdefaultring.action" failedpage="/error.jsp" path="/delpersonringother.action"/>
+     <command name = "finduserdefaultring" successedpage="/setring.jsp" failedpage="/error.jsp" path="/finduserdefaultring.action"/>
+     <command name = "finduseroperinfo" successedpage="/queryuseropera.jsp" failedpage="/error.jsp" path="/finduseroperinfo.action"/>
+     <command name = "findusersetting" successedpage="/ringconfig.jsp" failedpage="/error.jsp" path="/findusersetting.action"/>
+     <command name = "setusersetting" successedpage="/findusersetting.action" failedpage="/error.jsp" path="/setusersetting.action"/>
+     <command name = "findusersetting" successedpage="/ringcopyconfig.jsp" failedpage="/error.jsp" path="/findusersettingcopy.action"/>
+     <command name = "setusersetting" successedpage="/findusersettingcopy.action" failedpage="/error.jsp" path="/setusersettingcopy.action"/>
+     <command name = "editringgroup" successedpage="/ringgroup.jsp" failedpage="/error.jsp" path="/ringgroupmodifydemo.action"/>
+     <command name = "addringgroup" successedpage="/ringgroup.jsp" failedpage="/error.jsp" path="/ringgroupcreatedemo.action"/>
+     <command name = "findringgrphasused" successedpage="/ringgroup.jsp" failedpage="/error.jsp" path="/findringgrphasused.action"/>
+     <command name = "delringgroup" successedpage="/ringgroup.jsp" failedpage="/error.jsp" path="/delringgroup.action"/>
+     <command name = "delringgroupother" successedpage="/finduserdefaultring.action" failedpage="/error.jsp" path="/delringgroupother.action"/>
+     <command name = "moveringoutgroup" successedpage="/ringmember.jsp" failedpage="/error.jsp" path="/moveringoutgroup.action"/>
+     <command name = "getcopiedringallowed" successedpage="/copyring.jsp" failedpage="/error.jsp" path="/getcopiedringallowed.action"/>
+     <command name = "querycopiedring" successedpage="/copyring.jsp" failedpage="/error.jsp" path="/querycopiedring.action"/>
+     <command name = "querycopiedringaftercancel" successedpage="/copyring.jsp" failedpage="/error.jsp" path="/querycopiedringaftercancel.action"/>
+     <command name = "copyrings" successedpage="/copyring.jsp" failedpage="/error.jsp?returnpage=copyring.jsp" path="/copyrings.action"/>
+     <command name = "precopyrings" successedpage="/copyringend.jsp" failedpage="/error.jsp" path="/precopyrings.action"/>
+     <command name = "getuploadcredit" successedpage="/uploadring.jsp" failedpage="/error.jsp" path="/getuploadcredit.action"/>
+     <command name = "getuploadcredit" successedpage="/uploadDiyRing.jsp" failedpage="/error.jsp" path="/getuploadcredit.action"/>
+     <command name = "uploadring" successedpage="/uploadring.jsp" failedpage="/error.jsp" path="/uploadring.action"/>
+     <command name = "uploadring" successedpage="/uploadDiyRing.jsp" failedpage="/error.jsp" path="/uploaddiyring.action"/>
+
+     <command name = "trueuploadring" successedpage="/uploadring.jsp" failedpage="/error.jsp" path="/trueuploadring.action"/>
+     <command name = "addringingroup" successedpage="/ringmember.jsp" failedpage="/error.jsp" path="/addringingroup.action"/>
+
+     <command name = "editphonegroup" successedpage="/phonegroup.jsp" failedpage="/error.jsp" path="/phonegroupmodifydemo.action"/>
+     <command name = "addphonegroup" successedpage="/phonegroup.jsp" failedpage="/error.jsp" path="/phonegroupcreatedemo.action"/>
+     <command name = "findphonegrphasused" successedpage="/phonegroup.jsp" failedpage="/error.jsp" path="/findphonegrphasused.action"/>
+     <command name = "delphonegroup" successedpage="/phonegroup.jsp" failedpage="/error.jsp" path="/delphonegroup.action"/>
+     <command name = "findphonegrpexited" successedpage="/phonegroupmember.jsp" failedpage="/error.jsp" path="/findphonegrpexited.action"/>
+
+     <command name = "editphoneingroup" successedpage="/phonegroupmember.jsp" failedpage="/error.jsp" path="/phoneingroupmodifydemo.action"/>
+     <command name = "addphoneingroup" successedpage="/phonegroupmember.jsp" failedpage="/error.jsp" path="/phoneingroupcreatedemo.action"/>
+     <command name = "delphoneingroup" successedpage="/phonegroupmember.jsp" failedpage="/error.jsp" path="/delphoneingroup.action"/>
+     <command name = "findphonememberexited" successedpage="/phonegroupmemberedit.jsp" failedpage="/error.jsp" path="/findphonememberexited.action"/>
+
+     <command name = "finduserdiscountinfo" successedpage="/showdiscount.jsp" failedpage="/error.jsp" path="/finduserdiscountinfo.action"/>
+     <command name = "deluserdiscount" successedpage="/finduserdiscountinfo.action" failedpage="/error.jsp" path="/deluserdiscount.action"/>
+     <!--command name = "changepwd" successedpage="/changepassword.jsp" failedpage="/error.jsp" path="/userchangepwd.action" /-->
+     <command name = "adduserwantedring" successedpage="/liuyan.jsp" failedpage="/error.jsp" path="/adduserwantedring.action" />
+
+     <command name = "donothing" successedpage="/usertypeinfo.jsp" failedpage="/error.jsp" path="/showusertypeinfo.action" />
+     <command name = "modusertype" successedpage="/changeusertype_zh.jsp" failedpage="/error.jsp" path="/modusertype.action" />
+     <command name = "finduserringlib"  successedpage="/monthringedit.jsp" failedpage="/error.jsp" path="/monthcallingtimedemo.action" />
+     <command name = "finduserringlib"  successedpage="/weekringedit.jsp" failedpage="/error.jsp" path="/weekcallingtimedemo.action" />
+     <command name = "finduserringlib"  successedpage="/dateringedit.jsp" failedpage="/error.jsp" path="/datecallingtimedemo.action" />
+     <command name = "finduserringlib"  successedpage="/callingringedit.jsp" failedpage="/error.jsp" path="/callingring.action" />
+
+     <command name = "finduserfavorite" successedpage="/myfavorite.jsp" failedpage="/error.jsp" path="/finduserfavorite.action"/>
+     <command name = "addormoduserinfo" successedpage="/userinfo.jsp" failedpage="/error.jsp" path="/addormoduserinfo.action"/>
+
+     <command name = "exitgroup" successedpage="/exitgrp.jsp" failedpage="/error.jsp" path="/exitgroup.action"/>
+     <command name = "delfavoritering" successedpage="/myfavorite.jsp" failedpage="/error.jsp" path="/delfavoritering.action"/>
+
+     <command name = "setwantedgroup" successedpage="/wantedgroup.jsp" failedpage="/error.jsp" path="/setwantedgroup.action"/>
+
+     <command name = "findifblackexited" successedpage="/black.jsp" failedpage="/error.jsp" path="/findifblackexited.action"/>
+     <command name = "deloraddblack" successedpage="/black.jsp" failedpage="/error.jsp" path="/deloraddblack.action"/>
+
+    <command name = "setblack" successedpage="/black.jsp" failedpage="/error.jsp" path="/setblack.action"/>
+    <command name = "collectiongroupring" successedpage="/grpringlist.jsp" failedpage="/error.jsp" path="/collectiongroupring.action"/>
+
+    <command name = "findgroupname" successedpage="/grpringlist.jsp" failedpage="/error.jsp" path="/findgroupname.action"/>
+    <command name = "findgrouptimering" successedpage="/groupinfo.jsp" failedpage="/error.jsp" path="/findgrouptimering.action"/>
+    <command name = "donothing" successedpage="/copyring.jsp" failedpage="/error.jsp" path="/donothing.action"/>
+    <command name = "donothing"  successedpage="/SmsHead.jsp" failedpage="/error.jsp"  path="/initdxsetting.action"/>
+
+    <command name = "initeditring" successedpage="/editring.jsp" failedpage="/error.jsp" path="/initeditring.action"/>
+    <command name = "initeditring" successedpage="/callingtimetable.jsp" failedpage="/error.jsp" path="/initcallingtimetable.action"/>
+    <command name = "donothing" successedpage="/queryuseropera.jsp" failedpage="/error.jsp" path="/initqueryuseropera.action"/>
+    <command name = "donothing" successedpage="/ringgroup.jsp" failedpage="/error.jsp" path="/initringgroup.action"/>
+    <command name = "donothing" successedpage="/copyring.jsp" failedpage="/error.jsp" path="/initcopyring.action"/>
+    <command name = "donothing" successedpage="/uploadring.jsp" failedpage="/error.jsp" path="/inituploadring.action"/>
+    <command name = "donothing" successedpage="/uploadDiyRing.jsp" failedpage="/error.jsp" path="/inituploadDiyRing.action"/>
+    <command name = "donothing" successedpage="/black.jsp" failedpage="/error.jsp" path="/initblack.action"/>
+    <command name = "donothing" successedpage="/phonegroup.jsp" failedpage="/error.jsp" path="/initphonegroup.action"/>
+    <command name = "donothing" successedpage="/changepassword.jsp" failedpage="/error.jsp" path="/initchangepassword.action"/>
+    <command name = "donothing" successedpage="/myfavorite.jsp" failedpage="/error.jsp" path="/initmyfavorite.action"/>
+    <command name = "donothing" successedpage="/liuyan.jsp" failedpage="/error.jsp" path="/initliuyan.action"/>
+    <command name = "donothing" successedpage="/userinfo.jsp" failedpage="/error.jsp" path="/inituserinfo.action"/>
+    <command name = "donothing" successedpage="/exitgrp.jsp" failedpage="/error.jsp" path="/initexitgrp.action"/>
+    <command name = "donothing" successedpage="/active.jsp" failedpage="/error.jsp" path="/initactive.action"/>
+    <command name = "donothing" successedpage="/loginout.jsp" failedpage="/error.jsp" path="/initloginout.action"/>
+    <command name = "donothing" successedpage="/largessyw.jsp" failedpage="/error.jsp" path="/initlargessyw.action"/>
+    <command name = "donothing" successedpage="/wantedgroup.jsp" failedpage="/error.jsp" path="/initwantedgroup.action"/>
+    <command name = "donothing" successedpage="/changeusertype_zh.jsp" failedpage="/error.jsp" path="/initchangeusertype.action"/>
+    <command name = "donothing" successedpage="/largessyw.jsp" failedpage="/error.jsp" path="/initlargessyw.action"/>
+    <command name = "finduserringlib"  successedpage="/yearringedit.jsp" failedpage="/error.jsp" path="/yearcallingtimedemo.action" />
+    <command name = "diyringgrouplist" successedpage="/DIYringgrpdetail.jsp" failedpage="/error.jsp" path="/diyringgrouplist.action" />
+
+    <command name = "finddiscountexited"  successedpage="/discount.jsp" failedpage="/error.jsp" path="/finddiscountexited.action" />
+    <command name = "orderdiscount"  successedpage="/discount.jsp" failedpage="/error.jsp" path="/orderdiscount.action" />
+    <command name = "queryuserpoints"  successedpage="/userinfo.jsp" failedpage="/error.jsp" path="/queryuserpoints.action" />
+
+    <command name = "finduserdefaultring" successedpage="/leadring.jsp" failedpage="/error.jsp" path="/leadring.action"/>
+    <command name = "donothing" successedpage="/leadringtype.jsp" failedpage="/error.jsp" path="/setleadringgroupall.action"/>
+    <command name = "querytimeringinfo" successedpage="/timeringinfo.jsp" failedpage="/error.jsp" path="/querytimeringinfo.action"/>
+    <command name = "donothing" successedpage="/leadringtime.jsp" failedpage="/error.jsp" path="/leadringtime.action"/>
+    <command name = "queryleadringsetting" successedpage="/leadringtime.jsp" failedpage="/error.jsp" path="/queryleadringsetting.action"/>
+    <command name = "donothing" successedpage="/ringmember.jsp" failedpage="/error.jsp" path="/ringgroupmanager.action"/>
+
+    <command name = "donothing" successedpage="/ringboard.jsp" failedpage="/error.jsp" path="/ringboard.action"/>
+    <command name = "donothing" successedpage="/ringsearch.jsp" failedpage="/error.jsp" path="/ringsearch.action"/>
+    <command name = "donothing" successedpage="/phonegroupmember.jsp" failedpage="/error.jsp" path="/phonegroupmember.action"/>
+</domain>
+
+  <!--铃音操作：搜索、购买、赠�?-->
+  <domain context="com.zte.tao.domain.DomainContext" className="zte.zxyw50.colorring.service.RingDomainService">
+
+    <command name = "buyringtip"  successedpage="/buytips.jsp" failedpage="/error.jsp?back=-2"  path="/buyringtip.action" />
+    <command name = "openlargess"  successedpage="/largessring.jsp" failedpage="/error.jsp?back=-2"  path="/openlargess.action" />
+    <command name = "largessringtip"  successedpage="" failedpage="/error.jsp?back=-2"  path="/largessringtip.action" />
+    <command name = "ringgroupdetail"  successedpage="/sysringgrpdetail.jsp" failedpage="/error.jsp?back=-2"  path="/ringgroupdetail.action" />
+    <command name = "buyring"  successedpage="/setdefault.jsp" failedpage="/error.jsp?back=-2"  path="/buyring.action" />
+    <command name = "buydiscount"  successedpage="/main.jsp" failedpage="/error.jsp"  path="/buydiscount.action" />
+    <command name = "largessring"  successedpage="" failedpage="/error.jsp?back=-2"  path="/largessring.action" />
+    <!--command name = "largessring"  successedpage="/initeditring.action" failedpage="/error.jsp?back=-2"  path="/largessring1.action" /-->
+    <command name = "largessringgroup"  successedpage="" failedpage="/error.jsp?back=-2"  path="/largessringgroup.action" />
+    <command name = "setdefault"  successedpage="/setdefault.jsp" failedpage="/error.jsp?back=-3"  path="/setdefault.action" />
+    <command name = "largesspack"  successedpage="/main.jsp" failedpage="/error.jsp"  path="/largesspack.action" />
+    <command name = "largessyw"  successedpage="/largessyw.jsp" failedpage="/error.jsp"  path="/largessyw.action" />
+    <command name = "favorite"  successedpage="/myfavorite.jsp?op=1" failedpage="/error.jsp"  path="/favorite.action" />
+    <command name = "rmfavorite"  successedpage="/myfavorite.jsp?op=2" failedpage="/error.jsp"  path="/rmfavorite.action" />
+    <command name = "discount"  successedpage="/discount.jsp?action=addsuccessed" failedpage="/error.jsp"  path="/discount.action" />
+    <command name = "copyringsReplace" successedpage="/copyring.jsp" failedpage="/error.jsp?returnpage=copyring.jsp" path="/copyringsReplace.action"/>
+    <command name = "chargeTypeChange" successedpage="/chargeTypeChange.jsp" failedpage="/error.jsp?returnpage=chargeTypeChange.jsp" path="/chargeTypeChange.action"/>
+    <command name = "donothing" successedpage="/chargeTypeChange.jsp" failedpage="/error.jsp?returnpage=chargeTypeChange.jsp" path="/showchargeTypeChange.action"/>
+    <command name = "donothing" successedpage="/giftinbox.jsp" failedpage="/error.jsp" path="/giftinbox.action"/>
+    <command name = "delacceptinboxring" successedpage="/giftinbox.action" failedpage="/error.jsp" path="/delgiftinboxring.action"/>
+    <command name = "delacceptinboxring" successedpage="/giftinbox.action" failedpage="/error.jsp" path="/acceptinboxring.action"/>
+  </domain>
+
+  <!--用户管理操作：登�?-->
+  <domain context="com.zte.tao.domain.DomainContext" className="zte.zxyw50.user.service.UserDomainService">
+    <command name = "logon"  successedpage="/index.jsp" failedpage="/login.jsp"  path="/logon.action"/>
+    <command name = "logon"  successedpage="/indexLogon.jsp" failedpage="/login.jsp"  path="/logondx.action"/>
+    <command name = "logout"  successedpage="/logout.jsp"  failedpage="/error.jsp" path="/logout.action"/>
+    <command name = "logout"  successedpage="/index.jsp"  failedpage="/error.jsp" path="/docancel.action"/>
+    <command name = "getpwd"  successedpage="/openstatus.jsp" failedpage="/error.jsp"  path="/getpwd.action"/>
+    <command name = "getpwd"  successedpage="/openstatus.jsp" failedpage="/login.jsp"  path="/getpwddx.action"/>
+    <command name = "randompwd"  successedpage="" failedpage="/error.jsp"  path="/randompwd.action"/>
+    <command name = "openaccount"  successedpage="/main.jsp" failedpage="/error.jsp"  path="/openaccount.action"/>
+    <command name = "active"  successedpage="/refreshpage.jsp?op=1" failedpage="/error.jsp"  path="/active.action"/>
+    <command name = "deactive"  successedpage="/refreshpage.jsp?op=2" failedpage="/error.jsp"  path="/deactive.action"/>
+    <command name = "logoutcolorring"  successedpage="/refreshpage.jsp?op=3"  failedpage="/error.jsp" path="/logoutcolorring.action"/>
+    <command name = "registCrbtOrMrbt"  successedpage="" failedpage="/error.jsp"  path="/registCrbtOrMrbt.action"/>
+    <!--
+    <command name = "modpwd"  successedpage="/changepwd.jsp" failedpage="/error.jsp"  path="/modpwd.action" />
+    <command name = "modusertype"  successedpage="/changeusertypeend.jsp?succesed=true" failedpage="/error.jsp"  path="/modusertype.action" />
+    -->
+  </domain>
+</tao>
